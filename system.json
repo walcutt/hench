@@ -1,0 +1,33 @@
+{
+    "id": "hench",
+    "title": "HENCH",
+    "description": "HENCH (2025)",
+    "version": "0.0.0",
+    "compatibility": {
+        "minimum": "11",
+        "verified": "11"
+    },
+    "authors": [
+        {
+            "id": "walcutt",
+            "name": "walcutt",
+            "discord": "walcutt"
+        }
+    ],
+    "esmodules": [
+        "hench.mjs"
+    ],
+    "styles": [],
+    "packs": [],
+    "languages": [],
+    "documentTypes": {
+        "Actor": {
+            "hench": {},
+            "boss": {}
+        },
+        "Item": {
+            "move": {}
+        }
+    },
+    "url": "https://github.com/walcutt/hench"
+}
