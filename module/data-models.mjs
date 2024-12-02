@@ -1,6 +1,6 @@
 const { HTMLField, SchemaField, NumberField, StringField, BooleanField, FilePathField, ArrayField } = foundry.data.fields;
 
-import { nullPlaybookKey, playbookKeys, lookupPlaybook } from './playbooks.mjs';
+import { nullPlaybookKey, playbookKeys, lookupPlaybook, getPlaybookMutation } from './playbooks.mjs';
 
 const textField = () => new StringField({ required: true, blank: true });
 
@@ -9,39 +9,62 @@ const promptField = () => new SchemaField({
     answer: textField()
 });
 
-const harmField = () => new SchemaField({
-    marked: new BooleanField({ required: true }),
+const markableField = () => new SchemaField({
+    marked: new BooleanField({ required: true, initial: false }),
     description: textField(),
 });
+
+const arrayFieldValidator = (maxSize) => {
+    return (val, opts) => {
+        return !(val?.length > maxSize);
+    };
+};
+
+const cappedArrayField = (innerField, maxSize, defaultValue = undefined) => new ArrayField(innerField, {
+    required: true,
+    nullable: false,
+    initial: defaultValue ? Array(maxSize).fill(defaultValue) : [],
+    validate: arrayFieldValidator(maxSize),
+});
+
+const moveField = () => new SchemaField({
+    marked: new BooleanField({ required: true, initial: false }),
+    name: textField(),
+    description: textField(),
+    hasWriteIn: new BooleanField({ required: true, initial: false }),
+    writein: textField(),
+});
+
+const nullPlaybook = lookupPlaybook(nullPlaybookKey);
 
 export class HenchDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
             name: textField(),
             look: textField(),
-            detailAnswers: new SchemaField({
-                one: textField(),
-                two: textField(),
-            }),
+            details: cappedArrayField(promptField(), 2),
+            fixedInclinations: cappedArrayField(textField(), 2),
             customInclination: textField(),
+            missionPlanning: cappedArrayField(textField(), 3),
+
+            gearLimit: new NumberField({ required: true, integer: true, min: 3, initial: 3, max: 5 }),
+            fixedGear: cappedArrayField(markableField(), 9),
+            customGear: markableField(),
             harm: new SchemaField({
-                levelOne: new SchemaField({
-                    one: harmField(),
-                    two: harmField(),
-                }),
-                levelTwo: new SchemaField({
-                    one: harmField(),
-                    two: harmField(),
-                }),
-                levelThree: new SchemaField({
-                    one: harmField(),
-                }),
-                levelFour: new SchemaField({
-                    one: harmField(),
-                }),
+                levelOne: cappedArrayField(markableField(), 2, { marked: false, description: "" }),
+                levelTwo: cappedArrayField(markableField(), 2, { marked: false, description: "" }),
+                levelThree: cappedArrayField(markableField(), 1, { marked: false, description: "" }),
+                levelFour: cappedArrayField(markableField(), 1, { marked: false, description: "" }),
             }),
             stress: new NumberField({ required: true, integer: true, min: 0, initial: 0, max: 12 }),
+
+            moves: cappedArrayField(moveField(), 6),
+
+            experienceTriggers: cappedArrayField(markableField(), 4),
             experience: new NumberField({ required: true, integer: true, min: 0, initial: 0, max: 5 }),
+
+            baseAdvancements: cappedArrayField(markableField(), 5),
+            exAdvancements: cappedArrayField(markableField(), 3),
 
             playbook: new StringField({ required: true, blank: false, initial: nullPlaybookKey, options: playbookKeys }),
         };
@@ -53,53 +76,38 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
         return super.migrateData(source);
     }
 
+    /** @override */
+    async _preCreate(data, options, user) {
+        await super._preCreate(data, options, user);
+
+        const addPlaybookInfoMutation = getPlaybookMutation(data.playbook);
+
+        return this.updateSource(addPlaybookInfoMutation);
+    }
+
     get dead() {
         return !!this.harm.levelFour.marked;
-    }
-
-    get playbookDetails() {
-        return lookupPlaybook(this.playbook);
-    }
-
-    // TODO IMPLEMENT advancements
-    get gearLimit() {
-        return 3;
     }
 
     get hasPlaybookSelected() {
         return this.playbook !== nullPlaybookKey;
     }
 
-    get detailQuestions() {
-        return this.playbookDetails?.detailQuestions;
-    }
-
     get inclinations() {
-        const base = this.playbookDetails?.inclinations ?? {};
+        const base = this.fixedInclinations ?? [];
 
-        return {
+        return [
             ...base,
-            custom: this.customInclination
-        };
+            this.customInclination
+        ];
     }
 
-    get missionPlanningQuestions() {
-        return this.playbookDetails?.missionPlanningQuestions;
-    }
+    get gear() {
+        const base = this.fixedGear ?? [];
 
-    get expTriggers() {
-        const fromPlaybook = this.playbookDetails?.expTrigger;
-
-        let triggers = {
-            one: "You acted on your inclinations.",
-            two: "You made the boss proud.",
-            three: "Your home life interfered with the mission."
-        };
-
-        if(fromPlaybook) {
-            triggers.four = fromPlaybook;
-        }
-
-        return triggers;
+        return [
+            ...base,
+            this.customGear,
+        ];
     }
 }

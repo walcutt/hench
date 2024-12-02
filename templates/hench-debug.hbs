@@ -1,71 +1,96 @@
 <form>
     <h1> {{ actor.name }} </h1>
 
-    <h2> Explicit Details: </h2>
+    <h2> Details: </h2>
 
     <div id="hench-explicit-details">
         <p>Name: {{ actor.system.name }}</p>
         <p>Look: {{ actor.system.look }}</p>
-        <h3> Detail Answers: </h3>
         <div>
-            <p>Answer 1: {{ actor.system.detailAnswers.one }}</p>
-            <p>Answer 2: {{ actor.system.detailAnswers.two }}</p>
+            <span><b>Playbook:</b></span>
+            <select class="hench-hench-sheet-playbook-dropdown">
+                {{#each playbookKeys}}
+                    <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.key}}</option>
+                {{/each}}
+            </select>
         </div>
-        <p>Custom Inclination: {{ actor.system.customInclination }}</p>
+        <h3> Details </h3>
+        <div>
+            <ul>
+                {{#each actor.system.details}}
+                    <li><b>{{this.question}}</b>: {{this.answer}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <h3> Inclinations </h3>
+        <div>
+            <ul>
+                {{#each actor.system.inclinations}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <h3>Mission Planning</h3>
+        <ul>
+            {{#each actor.system.missionPlanning}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <p><b>Gear Limit</b>: {{actor.system.gearLimit}}</p>
+
+        <h3>Gear</h3>
+        <ul>
+            {{#each actor.system.gear}}
+                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+            {{/each}}
+        </ul>
+
         <h3> Harm: </h3>
         <div>
             <h4>Level 1:</h4>
-            <div>
-                <p>1 {{#if actor.system.harm.levelOne.one.marked }} X {{ else }} O {{/if}}: {{actor.system.harm.levelOne.one.description }}</p>
-                <p>1 {{#if actor.system.harm.levelOne.two.marked }} X {{ else }} O {{/if}}: {{actor.system.harm.levelOne.two.description }}</p>
-            </div>
+            <ul>
+                {{#each actor.system.harm.levelOne}}
+                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                {{/each}}
+            </ul>
             <h4>Level 2:</h4>
-            <div>
-                <p>1 {{#if actor.system.harm.levelTwo.one.marked }} X {{ else }} O {{/if}}: {{ actor.system.harm.levelTwo.one.description }}</p>
-                <p>1 {{#if actor.system.harm.levelTwo.two.marked }} X {{ else }} O {{/if}}: {{ actor.system.harm.levelTwo.two.description }}</p>
-            </div>
+            <ul>
+                {{#each actor.system.harm.levelTwo}}
+                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                {{/each}}
+            </ul>
             <h4>Level 3:</h4>
-            <div>
-                <p>1 {{#if actor.system.harm.levelThree.one.marked }} X {{ else }} O {{/if}}: {{actor.system.harm.levelThree.one.description }}</p>
-            </div>
+            <ul>
+                {{#each actor.system.harm.levelThree}}
+                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                {{/each}}
+            </ul>
             <h4>Level 3:</h4>
-            <div>
-                <p>1 {{#if actor.system.harm.levelFour.one.marked }} X {{ else }} O {{/if}}: {{actor.system.harm.levelFour.one.description }}</p>
-            </div>
+            <ul>
+                {{#each actor.system.harm.levelFour}}
+                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                {{/each}}
+            </ul>
         </div>
         <p>Stress: {{ actor.system.stress }}</p>
+        <h3>Experience Triggers</h3>
+        <ul>
+            {{#each actor.system.experienceTriggers}}
+                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+            {{/each}}
+        </ul>
         <p>Experience: {{ actor.system.experience }}</p>
-        <p>Playbook: {{ actor.system.playbook }}</p>
-    </div>
 
-    <h2>Implicit Details:</h2>
-    <div>
-        <p>Is Dead: {{ actor.system.dead }}</p>
-        <p>Gear Limit: {{ actor.system.gearLimit }}</p>
-        <p>Has playbook selected: {{ actor.system.hasPlaybookSelected }}</p>
-        <h3> Detail Questions: </h3>
-        <div>
-            <p>Question 1: {{ actor.system.detailQuestions.one }}</p>
-            <p>Question 2: {{ actor.system.detailQuestions.two }}</p>
-        </div>
-        <h3> Inclinations: </h3>
-        <div>
-            <p>Inclination 1: {{ actor.system.inclinations.one }}</p>
-            <p>Inclination 2: {{ actor.system.inclinations.two }}</p>
-            <p>Inclination 3: {{ actor.system.inclinations.custom }}</p>
-        </div>
-        <h3>Mission Planning</h3>
-        <div>
-            <p>Question 1: {{ actor.system.missionPlanningQuestions.one }}</p>
-            <p>Question 2: {{ actor.system.missionPlanningQuestions.two }}</p>
-            <p>Question 3: {{ actor.system.missionPlanningQuestions.three }}</p>
-        </div>
-        <h3>Experience Triggers:</h3>
-        <div>
-            <p>Trigger 1: {{ actor.system.expTriggers.one }}</p>
-            <p>Trigger 2: {{ actor.system.expTriggers.two }}</p>
-            <p>Trigger 3: {{ actor.system.expTriggers.three }}</p>
-            <p>Trigger 4: {{ actor.system.expTriggers.four }}</p>
-        </div>
+        <h3>Advancements</h3>
+        <ul>
+            {{#each actor.system.baseAdvancements}}
+                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+            {{/each}}
+            <hr />
+            {{#each actor.system.exAdvancements}}
+                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+            {{/each}}
+        </ul>
     </div>
 </form>
