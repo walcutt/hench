@@ -1,6 +1,6 @@
 <form>
     <h1> {{ actor.name }} </h1>
-
+    <button id="hench-console-log">Log data to console.</button>
     <h2> Details: </h2>
 
     <div id="hench-explicit-details">
@@ -42,7 +42,7 @@
         <h3>Gear</h3>
         <ul>
             {{#each actor.system.gear}}
-                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                <li><input type="checkbox" class="hench-checkbox-toggle-field" data-is-array="true" data-field-path="system.fixedGear" data-index="{{@index}}" data-sub-path="marked" {{#if this.marked}}checked{{/if}}/> {{this.description}}</li>
             {{/each}}
         </ul>
 
