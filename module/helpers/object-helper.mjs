@@ -75,6 +75,7 @@ export function updateField(actor, dataPathString, value) {
 
     console.log(`Converted ${dataPathString} to:`);
     console.log(dataPath);
+    console.log(`Writing: ${value}`);
 
     if(dataPath.isArray) {
         const initial = getValueAtPath(actor, dataPath.path);

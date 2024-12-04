@@ -41,9 +41,10 @@
 
         <h3>Gear</h3>
         <ul>
-            {{#each actor.system.gear}}
+            {{#each actor.system.fixedGear}}
                 <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.fixedGear[{{@index}}].marked" {{#if this.marked}}checked{{/if}}/> {{this.description}}</li>
             {{/each}}
+            <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.customGear.marked" {{#if system.customGear.marked}}checked{{/if}}/> {{system.customGear.description}}</li>
         </ul>
 
         <h3> Harm: </h3>
@@ -51,45 +52,55 @@
             <h4>Level 1:</h4>
             <ul>
                 {{#each actor.system.harm.levelOne}}
-                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelOne[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
                 {{/each}}
             </ul>
             <h4>Level 2:</h4>
             <ul>
                 {{#each actor.system.harm.levelTwo}}
-                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelTwo[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
                 {{/each}}
             </ul>
             <h4>Level 3:</h4>
             <ul>
                 {{#each actor.system.harm.levelThree}}
-                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelThree[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
                 {{/each}}
             </ul>
             <h4>Level 3:</h4>
             <ul>
                 {{#each actor.system.harm.levelFour}}
-                    <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelFour[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
                 {{/each}}
             </ul>
         </div>
         <p>Stress: {{ actor.system.stress }}</p>
+        <ul>
+            {{#int2checkbox maxStress actor.system.stress}}
+                <li style="display:inline"><input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.stress" data-value="{{index}}" {{#if marked}}checked{{/if}} /> </li>
+            {{/int2checkbox}}
+        </ul>
         <h3>Experience Triggers</h3>
         <ul>
             {{#each actor.system.experienceTriggers}}
-                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.experienceTriggers[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
             {{/each}}
         </ul>
         <p>Experience: {{ actor.system.experience }}</p>
+        <ul>
+            {{#int2checkbox maxExp actor.system.experience}}
+                <li style="display:inline"><input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.experience" data-value="{{index}}" {{#if marked}}checked{{/if}} /> </li>
+            {{/int2checkbox}}
+        </ul>
 
         <h3>Advancements</h3>
         <ul>
             {{#each actor.system.baseAdvancements}}
-                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.baseAdvancements[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
             {{/each}}
             <hr />
             {{#each actor.system.exAdvancements}}
-                <li><b>{{#if this.marked}} X {{else}} O {{/if}}</b> {{this.description}}</li>
+                <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.exAdvancements[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
             {{/each}}
         </ul>
     </div>

@@ -13,6 +13,10 @@ export class HenchDebugSheet extends ActorSheet {
 
         context.playbookKeys = [...playbookKeys, 'test'].map((k) => ({ key: k, selected: k === this.actor.system.playbook}));
 
+        // TODO define system constants for these
+        context.maxStress = 12;
+        context.maxExp = 5;
+
         return context;
     }
 
@@ -30,6 +34,18 @@ export class HenchDebugSheet extends ActorSheet {
             const element = event.currentTarget;
             const path = element.dataset.fieldPath;
             const value = element.checked;
+
+            updateField(this.actor, path, value);
+        });
+
+        // int checkboxes
+        html.find('.hench-checkbox-int-field').on('change', (event) => {
+            const element = event.currentTarget;
+            const path = element.dataset.fieldPath;
+            const checked = element.checked;
+            const valueData = parseInt(element.dataset.value);
+
+            const value = checked ? valueData : valueData - 1;
 
             updateField(this.actor, path, value);
         });
