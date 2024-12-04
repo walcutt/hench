@@ -50,6 +50,15 @@ export class HenchActorSheet extends ActorSheet {
 
             updateField(this.actor, path, value);
         });
+
+        // text fields
+        html.find('.hench-text-input').on('change', (event) => {
+            const element = event.currentTarget;
+            const path = element.dataset.fieldPath;
+            const value = element.value;
+
+            updateField(this.actor, path, value);
+        });
     }
 
     _changePlaybook(newPlaybookKeyEvent) {

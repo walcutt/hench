@@ -75,12 +75,15 @@ export function updateField(actor, dataPathString, value) {
 
     console.log(`Converted ${dataPathString} to:`);
     console.log(dataPath);
-    console.log(`Writing: ${value}`);
+    console.log(`Writing: ${value} (${typeof value})`);
 
     if(dataPath.isArray) {
         const initial = getValueAtPath(actor, dataPath.path);
         const copy = initial.map(e => deepCopy(e));
         copy[dataPath.index] = copyAndMutateAtPath(initial[dataPath.index], dataPath.subPath, value);
+
+        console.log(`Array write at index ${dataPath.index}`);
+        console.log(copy);
 
         actor.update({
             [dataPath.path]: copy,

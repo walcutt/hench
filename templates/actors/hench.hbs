@@ -4,8 +4,8 @@
     <h2> Details: </h2>
 
     <div id="hench-explicit-details">
-        <p>Name: {{ actor.name }}</p>
-        <p>Look: {{ actor.system.look }}</p>
+        <p>Name: <input type="text" class="hench-text-input" value="{{actor.name}}" data-field-path="name" /></p>
+        <p>Look: <input type="text" class="hench-text-input" value="{{actor.system.look}}" data-field-path="actor.system.look" /></p>
         <div>
             <span><b>Playbook:</b></span>
             <select class="hench-hench-sheet-playbook-dropdown">
@@ -18,16 +18,22 @@
         <div>
             <ul>
                 {{#each actor.system.details}}
-                    <li><b>{{this.question}}</b>: {{this.answer}}</li>
+                    <li>
+                        <b>{{this.question}}:</b>
+                        <input type="text" class="hench-text-input" data-field-path="system.details[{{@index}}].answer" value="{{this.answer}}" />
+                    </li>
                 {{/each}}
             </ul>
         </div>
         <h3> Inclinations </h3>
         <div>
             <ul>
-                {{#each actor.system.inclinations}}
+                {{#each actor.system.fixedInclinations}}
                     <li>{{this}}</li>
                 {{/each}}
+                <li>
+                    <input type="text" class="hench-text-input" data-field-path="system.customInclination" value="{{actor.system.customInclination}}" />
+                </li>
             </ul>
         </div>
         <h3>Mission Planning</h3>
@@ -42,9 +48,15 @@
         <h3>Gear</h3>
         <ul>
             {{#each actor.system.fixedGear}}
-                <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.fixedGear[{{@index}}].marked" {{#if this.marked}}checked{{/if}}/> {{this.description}}</li>
+                <li>
+                    <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.fixedGear[{{@index}}].marked" {{#if this.marked}}checked{{/if}}/>
+                    {{this.description}}
+                </li>
             {{/each}}
-            <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.customGear.marked" {{#if system.customGear.marked}}checked{{/if}}/> {{system.customGear.description}}</li>
+            <li>
+                <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.customGear.marked" {{#if actor.system.customGear.marked}}checked{{/if}}/>
+                <input type="text" class="hench-text-input" data-field-path="system.customGear.description" value="{{actor.system.customGear.description}}" />
+            </li>
         </ul>
 
         <h3> Harm: </h3>
@@ -52,25 +64,37 @@
             <h4>Level 1:</h4>
             <ul>
                 {{#each actor.system.harm.levelOne}}
-                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelOne[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
+                    <li>
+                        <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelOne[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                        <input type="text" class="hench-text-input" data-field-path="system.harm.levelOne[{{@index}}].description" value="{{this.description}}" />
+                    </li>
                 {{/each}}
             </ul>
             <h4>Level 2:</h4>
             <ul>
                 {{#each actor.system.harm.levelTwo}}
-                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelTwo[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
+                    <li>
+                        <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelTwo[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                        <input type="text" class="hench-text-input" data-field-path="system.harm.levelTwo[{{@index}}].description" value="{{this.description}}" />
+                    </li>
                 {{/each}}
             </ul>
             <h4>Level 3:</h4>
             <ul>
                 {{#each actor.system.harm.levelThree}}
-                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelThree[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
+                    <li>
+                        <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelThree[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                        <input type="text" class="hench-text-input" data-field-path="system.harm.levelThree[{{@index}}].description" value="{{this.description}}" />
+                    </li>
                 {{/each}}
             </ul>
             <h4>Level 3:</h4>
             <ul>
                 {{#each actor.system.harm.levelFour}}
-                    <li><input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelFour[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> {{this.description}}</li>
+                    <li>
+                        <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.harm.levelFour[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                        <input type="text" class="hench-text-input" data-field-path="system.harm.levelFour[{{@index}}].description" value="{{this.description}}" />
+                    </li>
                 {{/each}}
             </ul>
         </div>
