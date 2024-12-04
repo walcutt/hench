@@ -40,7 +40,6 @@ const nullPlaybook = lookupPlaybook(nullPlaybookKey);
 export class HenchDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
-            name: textField(),
             look: textField(),
             details: cappedArrayField(promptField(), 2),
             fixedInclinations: cappedArrayField(textField(), 2),
