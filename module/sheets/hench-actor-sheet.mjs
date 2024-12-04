@@ -1,5 +1,5 @@
 import { playbookKeys, validatePlaybookKey, getPlaybookMutation } from "../playbooks.mjs";
-import { updateField } from "../helpers/object-helper.mjs";
+import { updateField } from "../helpers/mutation-helper.mjs";
 
 export class HenchActorSheet extends ActorSheet {
     /** @override */
