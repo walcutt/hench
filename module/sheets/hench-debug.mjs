@@ -1,5 +1,5 @@
 import { playbookKeys, validatePlaybookKey, getPlaybookMutation } from "../playbooks.mjs";
-import { getValueAtPath, copyAndMutateAtPath, deepCopy } from "../helpers/object-helper.mjs";
+import { getValueAtPath, copyAndMutateAtPath, deepCopy, updateField } from "../helpers/object-helper.mjs";
 
 export class HenchDebugSheet extends ActorSheet {
     /** @override */
@@ -28,25 +28,10 @@ export class HenchDebugSheet extends ActorSheet {
         // boolean checkboxes
         html.find('.hench-checkbox-toggle-field').on('change', (event) => {
             const element = event.currentTarget;
-            
-            const isArrayPath = element.dataset.isArray;
-            const fieldPath = element.dataset.fieldPath;
-            const index = element.dataset.index;
-            const subPath = element.dataset.subPath;
-
+            const path = element.dataset.fieldPath;
             const value = element.checked;
 
-            if(isArrayPath) {
-                const array = getValueAtPath(this.actor, fieldPath);
-
-                const copy = array.map(e => deepCopy(e));
-
-                copy[index] = copyAndMutateAtPath(array[index], subPath, value);
-
-                this.actor.update({[fieldPath]: copy});
-            } else {
-                this.actor.update({[fieldPath]: value});
-            }
+            updateField(this.actor, path, value);
         });
     }
 
