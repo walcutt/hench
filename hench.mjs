@@ -1,6 +1,6 @@
 import { HenchDataModel } from "./module/data-models.mjs";
 
-import { HenchDebugSheet } from "./module/sheets/hench-debug.mjs";
+import { HenchActorSheet } from "./module/sheets/hench-actor-sheet.mjs";
 
 Handlebars.registerHelper('int2checkbox', (size, threshold, options) => {
     return new Array(size).fill(0).map(
@@ -14,7 +14,7 @@ Hooks.once("init", () => {
     };
 
     Actors.unregisterSheet('core', ActorSheet);
-    Actors.registerSheet('henchDebug', HenchDebugSheet, {
+    Actors.registerSheet('hench', HenchActorSheet, {
         makeDefault: true,
         label: 'Hench Debug Sheet',
     });

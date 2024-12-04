@@ -1,4 +1,4 @@
-export function getValueAtPath(obj, fieldPath) {
+function getValueAtPath(obj, fieldPath) {
     const pathSequence = fieldPath.split('.');
 
     let pointer = obj;
@@ -10,7 +10,7 @@ export function getValueAtPath(obj, fieldPath) {
     return pointer;
 }
 
-export function copyAndMutateAtPath(obj, fieldPath, val) {
+function copyAndMutateAtPath(obj, fieldPath, val) {
     const copy = deepCopy(obj);
 
     const changed = mutateAtPath(copy, fieldPath, val);
@@ -36,11 +36,11 @@ function mutateAtPath(obj, fieldPath, val) {
     return obj;
 }
 
-export function deepCopy(obj) {
+function deepCopy(obj) {
     return structuredClone(obj);
 }
 
-export function getDataPathFromString(dataPathString) {
+function getDataPathFromString(dataPathString) {
     const arraySplit = dataPathString.indexOf('[');
 
     const isArray = arraySplit > 0;

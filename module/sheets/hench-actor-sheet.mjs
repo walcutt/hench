@@ -1,10 +1,11 @@
 import { playbookKeys, validatePlaybookKey, getPlaybookMutation } from "../playbooks.mjs";
-import { getValueAtPath, copyAndMutateAtPath, deepCopy, updateField } from "../helpers/object-helper.mjs";
+import { updateField } from "../helpers/object-helper.mjs";
 
-export class HenchDebugSheet extends ActorSheet {
+export class HenchActorSheet extends ActorSheet {
     /** @override */
     get template() {
-        return `systems/hench/templates/hench-debug.hbs`;
+        console.log(`Mapping sheet: ${this.actor.type} => systems/hench/templates/actors/${this.actor.type}.hbs`)
+        return `systems/hench/templates/actors/${this.actor.type}.hbs`;
     }
 
     /** @override */

@@ -1,9 +1,11 @@
-- [] Define Move Model
-- [] Define Hench Model
+- [x] Define Move Model
+- [x] Define Hench Model
 - [] Define Boss Model
 - [x] Define Prompt Model (DEFUNCT)
 - [] Define Storyline Model
 - [] ? Define Table Model
+- [] Implement baseline hench sheet
+- [] Implement baseline boss sheet
 - [] Design Hench sheet
 - [] Design Boss sheet
 - [] Implement Hench sheet
