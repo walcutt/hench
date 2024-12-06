@@ -59,6 +59,23 @@
             </li>
         </ul>
 
+        <h3>Abilities</h3>
+        <ul>
+            {{#each actor.system.moves}}
+                <li>
+                    <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.moves[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                    <span><b>{{this.name}}:</b> {{this.description}}</span>
+                    {{#if this.hasWriteIn}}
+                        <input type="text" class="hench-text-input" data-field-path="system.moves[{{@index}}.writein]" value="{{this.writein}}" />
+                    {{/if}}
+                </li>
+            {{/each}}
+            <li>
+                <input type="checkbox" class="hench-checkbox-toggle-field" data-field-path="system.customMove.marked" {{#if actor.system.customMove.marked}}checked{{/if}} />
+                <textarea class="hench-text-input" data-field-path="system.customMove.description" {{#if actor.system.customMove.marked}}{{else}}disabled{{/if}}>{{actor.system.customMove.description}}</textarea>
+            </li>
+        </ul>
+
         <h3> Harm: </h3>
         <div>
             <h4>Level 1:</h4>
