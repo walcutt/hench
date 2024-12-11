@@ -52,12 +52,25 @@ export class HenchActorSheet extends ActorSheet {
         });
 
         // text fields
-        html.find('.hench-text-input').on('change', (event) => {
+        html.find('.hench-text-input').on('change', async (event) => {
             const element = event.currentTarget;
             const path = element.dataset.fieldPath;
             const value = element.value;
 
-            updateField(this.actor, path, value);
+            await updateField(this.actor, path, value);
+        });
+
+        // harm auto-marking
+        html.find('.hench-harm-field').on('change', async (event) => {
+            const element = event.currentTarget;
+            const primaryPath = element.dataset.fieldPath;
+            const secondaryPath = element.dataset.dependentPath;
+            const stringValue = element.value;
+
+            const markedValue = stringValue !== null && stringValue !== undefined && stringValue !== "";
+
+            await updateField(this.actor, primaryPath, stringValue)
+            await updateField(this.actor, secondaryPath, markedValue);
         });
     }
 

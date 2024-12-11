@@ -70,7 +70,7 @@ function getDataPathFromString(dataPathString) {
     }
 }
 
-export function updateField(actor, dataPathString, value) {
+export async function updateField(actor, dataPathString, value) {
     const dataPath = getDataPathFromString(dataPathString);
 
     console.log(`Converted ${dataPathString} to:`);
@@ -85,11 +85,11 @@ export function updateField(actor, dataPathString, value) {
         console.log(`Array write at index ${dataPath.index}`);
         console.log(copy);
 
-        actor.update({
+        await actor.update({
             [dataPath.path]: copy,
         });
     } else {
-        actor.update({
+        await actor.update({
             [dataPath.path]: value
         });
     }

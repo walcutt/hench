@@ -1,0 +1,140 @@
+/* Color tags */
+.hench-white {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.hench-l-grey {
+    background-color: #DDDDDD;
+    color: #000000;
+}
+
+.hench-m-grey {
+    background-color: #BBBBBB;
+    color: #000000;
+}
+
+.hench-d-grey {
+    background-color: #444444;
+    color: #FFFFFF;
+}
+
+.hench-black {
+    background-color: #111111;
+    color: #FFFFFF;
+}
+
+/* Flexbox */
+.hench-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.hench-sheet-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hench-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hench-box > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.hench-flex-fixed {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.hench-flex-resizeable {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+.hench-gap-narrow {
+    gap: 0.5em;
+}
+
+.hench-gap-wide {
+    gap: 1em;
+}
+
+.hench-padding-narrow {
+    padding: 0.5em;
+}
+
+.hench-padding-wide {
+    padding: 1em;
+}
+
+/* Labels */
+.hench-centered {
+    text-align: center;
+}
+
+/* Inputs */
+.hench-sheet-container input[type="text"], .hench-sheet-container select {
+    border: 0px;
+    border-bottom: 1px solid #000;
+    border-radius: 0px;
+
+    background-color: #00000000;
+    height: auto;
+    padding: 0;
+    padding-top: 1px;
+    margin: 0;
+}
+
+/* Specific */
+
+.hench-row-even{
+    justify-content: space-evenly;
+}
+
+.hench-stress-checkboxes-2-rows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5%;
+    padding: 3.5%;
+    justify-content: center;
+}
+
+.hench-stress-checkboxes-2-rows > input[type="checkbox"] {
+    width: 12.5%;
+    flex-basis: 12.5%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.5em;
+}
+
+.hench-icon {
+    aspect-ratio: 1;
+    width: 10em;
+}
+
+.hench-harm-fixed-width {
+    width: 8em;
+    text-align: center;
+}
+
+.hench-harm-input-cell {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.hench-harm-input-cell > input[type=text] {
+    border: 0px solid #000;
+}
+
+.hench-harm-row {
+    border-bottom: 1px solid #000;
+}

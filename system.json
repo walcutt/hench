@@ -4,8 +4,8 @@
     "description": "HENCH (2025)",
     "version": "0.0.0",
     "compatibility": {
-        "minimum": "11",
-        "verified": "11"
+        "minimum": "12",
+        "verified": "12"
     },
     "authors": [
         {
@@ -17,7 +17,7 @@
     "esmodules": [
         "hench.mjs"
     ],
-    "styles": [],
+    "styles": ["styles/hench.css"],
     "packs": [],
     "languages": [],
     "documentTypes": {

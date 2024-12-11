@@ -3,9 +3,15 @@ import { HenchDataModel } from "./module/data-models.mjs";
 import { HenchActorSheet } from "./module/sheets/hench-actor-sheet.mjs";
 
 Handlebars.registerHelper('int2checkbox', (size, threshold, options) => {
-    return new Array(size).fill(0).map(
+    return Array(size).fill(0).map(
         (e, i) => options.fn({index: i + 1, marked: i < threshold})
-    );
+    ).reduce((prev, next) => (prev + next), "");
+});
+
+Handlebars.registerHelper('partialList', (list, start, end, options) => {
+    return list.slice(start, end).map(
+        (e, i) => options.fn({ item: e, index: (start + i)})
+    ).reduce((prev, next) => (prev + next), "");
 });
 
 Hooks.once("init", () => {
@@ -16,6 +22,6 @@ Hooks.once("init", () => {
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet('hench', HenchActorSheet, {
         makeDefault: true,
-        label: 'Hench Debug Sheet',
+        label: 'Hench Sheet',
     });
 });
