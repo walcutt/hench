@@ -43,10 +43,18 @@
     justify-content: center;
 }
 
+.hench-box.hench-box-stretch {
+    align-items: stretch;
+}
+
 .hench-box > * {
     flex-grow: 1;
     flex-shrink: 0;
     align-items: center;
+}
+
+.hench-box.hench-box-stretch > * {
+    align-items: stretch;
 }
 
 .hench-flex-fixed {
@@ -79,6 +87,11 @@
 /* Labels */
 .hench-centered {
     text-align: center;
+}
+
+.hench-title {
+    font-weight: 500;
+    font-size: 1.5em;
 }
 
 /* Inputs */
@@ -124,6 +137,7 @@
 .hench-harm-fixed-width {
     width: 8em;
     text-align: center;
+    margin: auto;
 }
 
 .hench-harm-input-cell {
@@ -137,4 +151,5 @@
 
 .hench-harm-row {
     border-bottom: 1px solid #000;
+    align-items: stretch;
 }

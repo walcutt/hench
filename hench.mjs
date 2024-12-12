@@ -14,6 +14,17 @@ Handlebars.registerHelper('partialList', (list, start, end, options) => {
     ).reduce((prev, next) => (prev + next), "");
 });
 
+Handlebars.registerHelper('canDecrease', (value, cap) => {
+    return value > cap;
+});
+
+Handlebars.registerHelper('canIncrease', (value, cap) => {
+    return value < cap;
+});
+
+Handlebars.registerHelper('increment', (value) => (value + 1));
+Handlebars.registerHelper('decrement', (value) => (value - 1));
+
 Hooks.once("init", () => {
     CONFIG.Actor.dataModels = {
         hench: HenchDataModel,

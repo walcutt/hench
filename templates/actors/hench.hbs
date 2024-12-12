@@ -3,7 +3,7 @@
         <!-- ID row -->
         <div class="hench-row hench-gap-wide">
             <!-- Core - Name, Look, Playbook -->
-            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow">
+            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
                 <!-- Name -->
                 <div class="hench-field hench-row hench-gap-narrow">
                     <label class="hench-flex-fixed" for="hench-name">Name: </label>
@@ -25,8 +25,8 @@
                 </div>
             </div>
             <!-- Inclinations -->
-            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow">
-                <div class="hench-centered">
+            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                <div class="hench-centered hench-title">
                     Inclinations
                 </div>
                 <ul>
@@ -48,7 +48,12 @@
         <!-- Details row -->
         <div class="hench-row hench-gap-wide">
             <!-- Details --> 
-            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow">
+            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                <div class="hench-row">
+                    <div class="hench-centered hench-title hench-flex-resizeable">
+                        Details
+                    </div>
+                </div>
                 {{#each actor.system.details}}
                     <div class="hench-row">
                         <label for="hench-detail-{{@index}}">{{this.question}}</label>
@@ -59,8 +64,8 @@
                 {{/each}}
             </div>
             <!-- Mission Planning -->
-            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow">
-                <div class="hench-centered">
+            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                <div class="hench-centered hench-title">
                     Mission Planning
                 </div>
                 <ul>
@@ -72,8 +77,8 @@
         </div>
         <!-- Stress -->
         <div class="hench-row hench-gap-wide">
-            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow">
-                <div class="hench-centered">
+            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                <div class="hench-centered hench-title">
                     <label for="hench-stress">
                         Stress
                     </label>
@@ -85,42 +90,43 @@
                 </div>
             </div>
         </div>
-        <!-- Gear -->
+        <!-- Big Box -->
         <div class="hench-row hench-gap-wide">
-            <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow">
-                <div class="hench-centered">
-                    Gear
-                </div>
-                <div class="hench-row hench-gap-wide">
-                    <div class="hench-box hench-flex-resizeable">
-                        {{#partialList actor.system.fixedGear 0 5}}
-                            <div class="hench-row hench-gap-narrow">
-                                <div class="hench-flex-fixed">
-                                    <input type="checkbox" name="hench-gear-{{index}}" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.fixedGear[{{index}}].marked" {{#if item.marked}}checked{{/if}} />
+            <!-- Column 1: gear, exp -->
+            <div class="hench-box hench-box-stretch hench-flex-fixed hench-gap-wide">
+                <!-- Gear -->
+                <div class="hench-row hench-flex-resizeable">
+                    <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                        <div class="hench-row">
+                            <div class="hench-centered hench-title hench-flex-resizeable">
+                                Gear
+                            </div>
+                        </div>
+                        <div class="hench-row hench-row-even hench-gap-narrow">
+                            <div>
+                                <input type="button" class="hench-button hench-increment-button-field" data-field-path="system.gearLimit" data-value="{{decrement actor.system.gearLimit}}" {{#unless (canDecrease actor.system.gearLimit minGear)}}disabled{{/unless}} value="-" />
+                            </div>
+                            <div>
+                                Limit: {{actor.system.gearLimit}}
+                            </div>
+                            <div>
+                                <input type="button" class="hench-button hench-increment-button-field" data-field-path="system.gearLimit" data-value="{{increment actor.system.gearLimit}}" {{#unless (canIncrease actor.system.gearLimit maxGear)}}disabled{{/unless}} value="+" />
+                            </div>
+                        </div>
+                        {{#each actor.system.fixedGear}}
+                            <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
+                                <div class="hench-box hench-flex-fixed">
+                                    <input type="checkbox" name="hench-gear-{{@index}}" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.fixedGear[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
                                 </div>
                                 <div class="hench-box hench-flex-resizeable">
                                     <div>
-                                        {{item.description}}
+                                        {{this.description}}
                                     </div>
                                 </div>
                             </div>
-                        {{/partialList}}
-                    </div>
-                    <div class="hench-box hench-flex-resizeable">
-                        {{#partialList actor.system.fixedGear 5 9}}
-                            <div class="hench-row hench-gap-narrow">
-                                <div class="hench-flex-fixed">
-                                    <input type="checkbox" name="hench-gear-{{index}}" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.fixedGear[{{index}}].marked" {{#if item.marked}}checked{{/if}} />
-                                </div>
-                                <div class="hench-box hench-flex-resizeable">
-                                    <div>
-                                        {{item.description}}
-                                    </div>
-                                </div>
-                            </div>
-                        {{/partialList}}
-                        <div class="hench-row hench-gap-narrow">
-                            <div class="hench-flex-fixed">
+                        {{/each}}
+                        <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
+                            <div class="hench-box hench-flex-fixed">
                                 <input type="checkbox" name="hench-gear-9" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.customGear.marked" {{#if actor.system.customGear.marked}}checked{{/if}} />
                             </div>
                             <div class="hench-box hench-flex-resizeable">
@@ -131,128 +137,138 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Moves -->
-        <div class="hench-row hench-gap-wide">
-            <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
-                <div class="hench-centered">
-                    Abilities
-                </div>
-                {{#each actor.system.moves}}
-                    <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow">
-                        <div class="hench-box hench-flex-fixed">
-                            <input type="checkbox" name="hench-move-checkbox-{{@index}}" class="hench-checkbox-toggle-field" data-field-path="system.moves[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> 
+                <!-- exp -->
+                <div class="hench-row hench-flex-resizeable">
+                    <div class="hench-box hench-d-grey hench-padding-narrow hench-gap-narrow hench-flex-resizeable">
+                        <div class="hench-row">
+                            <div class="hench-centered hench-title hench-flex-resizeable">
+                                Experience
+                            </div>
                         </div>
-                        <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
-                            <div>
-                                <label for="hench-move-checkbox-{{@index}}">{{this.name}}</label>
-                            </div>
-                            <div>
-                                {{this.description}}
-                            </div>
-                            {{#if this.hasWriteIn}}
+                        <div class="hench-row hench-row-even hench-gap-narrow hench-padding-narrow">
+                            {{#int2checkbox maxExp actor.system.experience}}
                                 <div>
-                                    <input type="text" name="hench-move-writein-{{@index}}" class="hench-text-field" data-field-path="system.moves[{{@index}}].writein" value="{{this.writein}}" />
+                                    <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.experience" data-value="{{index}}" {{#if marked}} checked {{/if}} />
                                 </div>
-                            {{/if}}
+                            {{/int2checkbox}}
                         </div>
-                    </div>
-                {{/each}}
-                <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow">
-                    <div class="hench-box hench-flex-fixed">
-                        <input type="checkbox" name="hench-move-checkbox-custom" class="hench-checkbox-toggle-field" data-field-path="system.customMove.marked" {{#if actor.system.customMove.marked}}checked{{/if}} /> 
-                    </div>
-                    <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
-                        <div>
-                            <input type="text" name="hench-move-name-custom" class="hench-text-field" data-field-path="system.customMove.name" value="{{actor.system.customMove.name}}" {{#if actor.system.customMove.marked}} {{else}} disabled {{/if}} />
-                        </div>
-                        <div>
-                            <input type="text" name="hench-move-description-custom" class="hench-text-field" data-field-path="system.customMove.description" value="{{actor.system.customMove.description}}" {{#if actor.system.customMove.marked}} {{else}} disabled {{/if}} />
-                        </div>
+                        {{#each actor.system.experienceTriggers}}
+                            <div class="hench-row hench-m-grey hench-padding-narrow hench-gap-narrow">
+                                <div class="hench-box hench-flex-fixed">
+                                    <input type="checkbox" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.experienceTriggers[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                                </div>
+                                <div class="hench-box hench-flex-resizeable">
+                                    {{this.description}}
+                                </div>
+                            </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Harm -->
-        <div class="hench-row hench-gap-wide">
-            <div class="hench-box hench-black hench-padding-narrow hench-flex-resizeable">
-                <div class="hench-row">
-                    <div class="hench-flex-resizeable hench-centered">
-                        Harm
-                    </div>
-                </div>
-                <!-- tier 3 -->
-                <div class="hench-row hench-m-grey hench-harm-row hench-flex-resizeable">
-                    <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
-                        3:
-                    </div>
-                    {{#each actor.system.harm.levelThree}}
-                        <div class="{{#if this.marked}}hench-white{{else}}hench-l-grey{{/if}} hench-flex-resizeable hench-padding-narrow hench-harm-input-cell">
-                            <input type="text" class="hench-harm-field" data-field-path="system.harm.levelThree[{{@index}}].description" data-dependent-path="system.harm.levelThree[{{@index}}].marked" value="{{this.description}}" />
+            <!-- Column 2: harm, moves -->
+            <div class="hench-box hench-box-stretch hench-flex-resizeable hench-gap-wide">
+                <!-- Harm -->
+                <div class="hench-row hench-gap-wide">
+                    <div class="hench-box hench-d-grey hench-padding-narrow hench-flex-resizeable">
+                        <div class="hench-row">
+                            <div class="hench-flex-resizeable hench-centered hench-title">
+                                Harm
+                            </div>
                         </div>
-                    {{/each}}
-                    <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
-                        Need help.
-                    </div>
-                </div>
-                <!-- tier 2 -->
-                <div class="hench-row hench-m-grey hench-harm-row hench-flex-resizeable">
-                    <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
-                        2:
-                    </div>
-                    {{#each actor.system.harm.levelTwo}}
-                        <div class="{{#if this.marked}}hench-white{{else}}hench-l-grey{{/if}} hench-flex-resizeable hench-padding-narrow hench-harm-input-cell">
-                            <input type="text" class="hench-harm-field" data-field-path="system.harm.levelTwo[{{@index}}].description" data-dependent-path="system.harm.levelTwo[{{@index}}].marked" value="{{this.description}}" />
+                        <!-- tier 3 -->
+                        <div class="hench-row hench-m-grey hench-harm-row hench-flex-resizeable">
+                            <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
+                                3:
+                            </div>
+                            {{#each actor.system.harm.levelThree}}
+                                <div class="{{#if this.marked}}hench-white{{else}}hench-l-grey{{/if}} hench-flex-resizeable hench-padding-narrow hench-harm-input-cell">
+                                    <input type="text" class="hench-harm-field" data-field-path="system.harm.levelThree[{{@index}}].description" data-dependent-path="system.harm.levelThree[{{@index}}].marked" value="{{this.description}}" />
+                                </div>
+                            {{/each}}
+                            <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
+                                Need help.
+                            </div>
                         </div>
-                    {{/each}}
-                    <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
-                        -1 Card
-                    </div>
-                </div>
-                <!-- tier 1-->
-                <div class="hench-row hench-m-grey hench-harm-row hench-flex-resizeable">
-                    <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
-                        1:
-                    </div>
-                    {{#each actor.system.harm.levelOne}}
-                        <div class="{{#if this.marked}}hench-white{{else}}hench-l-grey{{/if}} hench-flex-resizeable hench-padding-narrow hench-harm-input-cell">
-                            <input type="text" class="hench-harm-field" data-field-path="system.harm.levelOne[{{@index}}].description" data-dependent-path="system.harm.levelOne[{{@index}}].marked" value="{{this.description}}" />
+                        <!-- tier 2 -->
+                        <div class="hench-row hench-m-grey hench-harm-row hench-flex-resizeable">
+                            <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
+                                2:
+                            </div>
+                            {{#each actor.system.harm.levelTwo}}
+                                <div class="{{#if this.marked}}hench-white{{else}}hench-l-grey{{/if}} hench-flex-resizeable hench-padding-narrow hench-harm-input-cell">
+                                    <input type="text" class="hench-harm-field" data-field-path="system.harm.levelTwo[{{@index}}].description" data-dependent-path="system.harm.levelTwo[{{@index}}].marked" value="{{this.description}}" />
+                                </div>
+                            {{/each}}
+                            <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
+                                -1 Card
+                            </div>
                         </div>
-                    {{/each}}
-                    <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
-                        
+                        <!-- tier 1-->
+                        <div class="hench-row hench-m-grey hench-harm-row hench-flex-resizeable">
+                            <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
+                                1:
+                            </div>
+                            {{#each actor.system.harm.levelOne}}
+                                <div class="{{#if this.marked}}hench-white{{else}}hench-l-grey{{/if}} hench-flex-resizeable hench-padding-narrow hench-harm-input-cell">
+                                    <input type="text" class="hench-harm-field" data-field-path="system.harm.levelOne[{{@index}}].description" data-dependent-path="system.harm.levelOne[{{@index}}].marked" value="{{this.description}}" />
+                                </div>
+                            {{/each}}
+                            <div class="hench-flex-fixed hench-m-grey hench-harm-fixed-width">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Experience -->
-        <div class="hench-row hench-gap-wide">
-            <div class="hench-box hench-l-grey hench-padding-narrow hench-gap-narrow hench-flex-resizeable">
-                <div class="hench-centered">
-                    Experience
-                </div>
-                <div class="hench-row hench-row-even hench-gap-narrow hench-padding-narrow">
-                    {{#int2checkbox maxExp actor.system.experience}}
-                        <div>
-                            <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.experience" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                <!-- Moves -->
+                <div class="hench-row hench-gap-wide">
+                    <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                        <div class="hench-row">
+                            <div class="hench-centered hench-title hench-flex-resizeable">
+                                Abilities
+                            </div>
                         </div>
-                    {{/int2checkbox}}
+                        {{#each actor.system.moves}}
+                            <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow">
+                                <div class="hench-box hench-flex-fixed">
+                                    <input type="checkbox" name="hench-move-checkbox-{{@index}}" class="hench-checkbox-toggle-field" data-field-path="system.moves[{{@index}}].marked" {{#if this.marked}}checked{{/if}} /> 
+                                </div>
+                                <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
+                                    <div>
+                                        <label for="hench-move-checkbox-{{@index}}"><em><strong>{{this.name}}</strong></em></label>
+                                    </div>
+                                    <div>
+                                        {{this.description}}
+                                    </div>
+                                    {{#if this.hasWriteIn}}
+                                        <div>
+                                            <input type="text" name="hench-move-writein-{{@index}}" class="hench-text-field" data-field-path="system.moves[{{@index}}].writein" value="{{this.writein}}" />
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/each}}
+                        <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow">
+                            <div class="hench-box hench-flex-fixed">
+                                <input type="checkbox" name="hench-move-checkbox-custom" class="hench-checkbox-toggle-field" data-field-path="system.customMove.marked" {{#if actor.system.customMove.marked}}checked{{/if}} /> 
+                            </div>
+                            <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
+                                <div>
+                                    <input type="text" name="hench-move-name-custom" class="hench-text-field" data-field-path="system.customMove.name" value="{{actor.system.customMove.name}}" {{#if actor.system.customMove.marked}} {{else}} disabled {{/if}} />
+                                </div>
+                                <div>
+                                    <textarea name="hench-move-description-custom" class="hench-text-field" data-field-path="system.customMove.description">{{actor.system.customMove.description}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <ul>
-                    {{#each actor.system.experienceTriggers}}
-                        <li>
-                            {{this.description}}
-                        </li>
-                    {{/each}}
-                </ul>
             </div>
         </div>
         <!-- Advancements -->
         <div class="hench-row hench-gap-wide">
             <!-- base advancements -->
             <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
-                <div class="hench-flex-fixed hench-centered">
+                <div class="hench-flex-fixed hench-title hench-centered">
                     Advancements
                 </div>
                 {{#each actor.system.baseAdvancements}}
@@ -267,8 +283,8 @@
                 {{/each}}
             </div>
             <!-- advanced advancements -->
-            <div class="hench-box hench-black hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
-                <div class="hench-flex-fixed hench-centered">
+            <div class="hench-box hench-d-grey hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
+                <div class="hench-flex-fixed hench-title hench-centered">
                     Advancements
                 </div>
                 <div class="hench-flex-fixed hench-centered">

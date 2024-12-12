@@ -18,6 +18,9 @@ export class HenchActorSheet extends ActorSheet {
         context.maxStress = 12;
         context.maxExp = 5;
 
+        context.minGear = 3;
+        context.maxGear = 5;
+
         return context;
     }
 
@@ -71,6 +74,15 @@ export class HenchActorSheet extends ActorSheet {
 
             await updateField(this.actor, primaryPath, stringValue)
             await updateField(this.actor, secondaryPath, markedValue);
+        });
+
+        // increase/decrease buttons
+        html.find('.hench-increment-button-field').click((event) => {
+            const element = event.currentTarget;
+            const path = element.dataset.fieldPath;
+            const value = element.dataset.value;
+
+            updateField(this.actor, path, value);
         });
     }
 
