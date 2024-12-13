@@ -122,6 +122,10 @@
     margin: 0;
 }
 
+.hench-sheet-container textarea {
+    resize: vertical;
+}
+
 /* Specific */
 
 .hench-row-even{
