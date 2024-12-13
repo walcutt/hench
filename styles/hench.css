@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 /* Color tags */
 .hench-white {
     background-color: #FFFFFF;
@@ -22,6 +24,11 @@
 .hench-black {
     background-color: #111111;
     color: #FFFFFF;
+}
+
+/* Font */
+.hench-sheet-container {
+    font-family: 'Oswald';
 }
 
 /* Flexbox */
