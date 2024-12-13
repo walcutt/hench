@@ -62,11 +62,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "*********** ********",
-                description: `**** *** ***** **** * *** ****** ** ********** *********, *** **** *** *** *** *** ** *** *********. ***'** ***** ** **** ******: ******. ******** *** ***** ** ****.\n
-                    \t - **** ** ***** *****?\n
-                    \t - *** *** **** ****?\n
-                    \t - *** ** **** **** ****?\n
-                    \t - *** *** ** ** ********.`,
+                description: `**** *** ***** **** * *** ****** ** ********** *********, *** **** *** *** *** *** ** *** *********. ***'** ***** ** **** ******: ******. ******** *** ***** ** ****.`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -94,10 +90,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "*************!",
-                description: `** * ******** **** *** *** ***** *** *** *** *********** ***** * ***** ** *** *******. ***** * ****** **** ***** **** ***** *** ****. ****** *** ***, *** *** *** ****:\n
-                    \t - ** * *-*, *** ***** **** *********** ** ******* *** ******.\n
-                    \t - ** * *-*, *** ***** **** *********** ** ***** *** ***** * ****** ** *****.\n
-                    \t - ** * *-* ******* ***** ****** ** **** ****** *** **** ********* **** **** **** ********** ** *******.`,
+                description: `** * ******** **** *** *** ***** *** *** *** *********** ***** * ***** ** *** *******. ***** * ****** **** ***** **** ***** *** ****. ****** *** ***, *** *** *** ****:
+                <ul class="hench-list-1-col">
+                    <li>** * *-*, *** ***** **** *********** ** ******* *** ******.</li>
+                    <li>** * *-*, *** ***** **** *********** ** ***** *** ***** * ****** ** *****.</li>
+                    <li>** * *-* ******* ***** ****** ** **** ****** *** **** ********* **** **** **** ********** ** *******.</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -153,11 +151,13 @@ const playbooks = {
             {
                 marked: false,
                 name: "Encyclopedic Knowledge",
-                description: `When you first meet a new heroic or villainous character, The Boss may ask you one of the following. You've heard of them before: answer. Whatever you state is true.\n
-                    \t - What is their power?\n
-                    \t - Why are they here?\n
-                    \t - Who do they work with?\n
-                    \t - Any yes or no question.`,
+                description: `When you first meet a new heroic or villainous character, The Boss may ask you one of the following. You've heard of them before: answer. Whatever you state is true.
+                <ul class="hench-list-2-col">
+                    <li>What is their power?</li>
+                    <li>Why are they here?</li>
+                    <li>Who do they work with?</li>
+                    <li>Any yes or no question.</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -185,10 +185,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Forum Lurker",
-                description: `As a downtime move you can trawl the web for information about a piece of the setting. State a single fact about this thing and draw. Ignore the cue, and use the rank:\n
-                    \t - On a 1-2, you learn your information is correct but flawed.\n
-                    \t - On a 3-6, you learn your information is false but holds a kernel of truth.\n
-                    \t - On a 5-6 someone takes notice of your search and will interfere with your next obligation or mission.\n`,
+                description: `As a downtime move you can trawl the web for information about a piece of the setting. State a single fact about this thing and draw. Ignore the cue, and use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — You learn your information is correct but flawed.</li>
+                    <li>3-6 — You learn your information is false but holds a kernel of truth.</li>
+                    <li>5-6 — Someone takes notice of your search and will interfere with your next obligation or mission.</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -244,22 +246,24 @@ const playbooks = {
             {
                 marked: false,
                 name: "Go Overboard",
-                description: `Once per session, when you throw yourself into overwhelming danger, you can treat any played card as -1 rank and ignore any harm as consequence. This does not extend to your team. (This doesn't reduce a 1 to a 0).`,
+                description: `Once per session, when you throw yourself into overwhelming danger, you can treat any played card as -1 rank and ignore any harm as consequence. This does not extend to your team. <em>(This doesn't reduce a 1 to a 0).</em>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
             {
                 marked: false,
                 name: "Signature Weapon",
-                description: `You gain a new gear. Name it, then choose two properties it has.\n
-                    \t - Scary\n
-                    \t - Deadly\n
-                    \t - Concealable\n
-                    \t - Quick\n
-                    \t - Unbreakable\n
-                    \t - Explosive\n
-                    \t - Explosive\n
-                    \t - Sniping`,
+                description: `You gain a new gear. Name it, then choose two properties it has.
+                <ul class="hench-list-2-col">
+                    <li>Scary</li>
+                    <li>Deadly</li>
+                    <li>Concealable</li>
+                    <li>Quick</li>
+                    <li>Unbreakable</li>
+                    <li>Explosive</li>
+                    <li>Explosive</li>
+                    <li>Sniping</li>
+                </ul>`,
                 hasWriteIn: true,
                 writeIn: "",
             },
@@ -280,10 +284,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Like Old Times",
-                description: `As a downtime move, you can take an old friend out on the town. Describe how things were between you, back in the day and how you spend time with them now. Then, draw. Ignore the cue, and use the rank:\n
-                    \t 1-2 — They want back on your good side. What is the same? What is different now?\n
-                    \t 3-4 — They might forgive you. What did you do to hurt them?\n
-                    \t 5-6 — Things will never be the same as they used to be. Why?\n`,
+                description: `As a downtime move, you can take an old friend out on the town. Describe how things were between you, back in the day and how you spend time with them now. Then, draw. Ignore the cue, and use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — They want back on your good side. What is the same? What is different now?</li>
+                    <li>3-4 — They might forgive you. What did you do to hurt them?</li>
+                    <li>5-6 — Things will never be the same as they used to be. Why?</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -339,18 +345,20 @@ const playbooks = {
             {
                 marked: false,
                 name: "Always Prepared",
-                description: `At the beginning of the action, write a new piece of gear in below. Choose one flaw. You may use this gear this mission, without counting towards your slots.. At the end of the mission, erase it.\n
-                    \t - Inaccurate\n
-                    \t - Slow\n
-                    \t - Unstable\n
-                    \t - Cumbersome\n`,
+                description: `At the beginning of the action, write a new piece of gear in below. Choose one flaw. You may use this gear this mission, without counting towards your slots. At the end of the mission, erase it.
+                <ul class="hench-list-2-col">
+                    <li>Inaccurate</li>
+                    <li>Slow</li>
+                    <li>Unstable</li>
+                    <li>Cumbersome</li>
+                </ul>`,
                 hasWriteIn: true,
                 writeIn: "",
             },
             {
                 marked: false,
                 name: "Wirey",
-                description: `Treat all played ♣ cards as -1 rank. Treat all played ♠ cards as +1 rank. (This won't turn a 1 into a 0, or a 6 into a 7)`,
+                description: `Treat all played ♣ cards as -1 rank. Treat all played ♠ cards as +1 rank. <em>(This won't turn a 1 into a 0, or a 6 into a 7).</em>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -371,10 +379,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Logistics",
-                description: `As a downtime action you may tap your connections to procure something unusual. State what you're trying to find, then draw. Ignore the cue, and instead  use the rank:\n
-                    \t 1-2 — You find a source in ample supply. However much you need, you got.\n
-                    \t 3-4 — You're able to squeeze out a sample. You have barely enough to work with.\n
-                    \t 5-6 — You catch trouble. Mark 2  heat.\n`,
+                description: `As a downtime action you may tap your connections to procure something unusual. State what you're trying to find, then draw. Ignore the cue, and instead  use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — You find a source in ample supply. However much you need, you got.</li>
+                    <li>3-4 — You're able to squeeze out a sample. You have barely enough to work with.</li>
+                    <li>5-6 — You catch trouble. Mark 2  heat.</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -437,14 +447,14 @@ const playbooks = {
             {
                 marked: false,
                 name: "You're Dead, Kiddo",
-                description: `When you intimidate someone by describing a past villainous deed, treat any ♥ as -1 rank. (This won't turn an ace into a 0).`,
+                description: `When you intimidate someone by describing a past villainous deed, treat any ♥ as -1 rank. <em>(This won't turn an ace into a 0)</em>.`,
                 hasWriteIn: false,
                 writeIn: null,
             },
             {
                 marked: false,
                 name: "I've Seen Worse",
-                description: `During The Action, you can help another character. Describe a similar memory from your past that has prepared you for this moment. They take +1 to their draw (possibly up to 4 cards), and you take one stress.`,
+                description: `During The Action, you can help another character. Describe a similar memory from your past that has prepared you for this moment. They take +1 to their draw <em>(possibly up to 4 cards)</em>, and you take one stress.`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -458,10 +468,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Friends in Low Places",
-                description: `As a downtime move, you can ask an underworld contact to complete an unusual favor. State what you want, then draw. Ignore the cue, and instead use the rank:\n
-                    \t 1-2 — They phone it in, but they do it.\n
-                    \t 3-4 — They do it sloppily. A new complication arises.\n
-                    \t 5-6 — You get roped into doing a favor for them during the next mission. If you fail to follow through, take 2 harm, "Damaged Reputation."`,
+                description: `As a downtime move, you can ask an underworld contact to complete an unusual favor. State what you want, then draw. Ignore the cue, and instead use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — They phone it in, but they do it.</li>
+                    <li>3-4 — They do it sloppily. A new complication arises.</li>
+                    <li>5-6 — You get roped into doing a favor for them during the next mission. If you fail to follow through, take 2 harm, "Damaged Reputation."</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -524,7 +536,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Sore Thumb",
-                description: `When you follow a cue, you can take 1 stress to gain an additional cue: “You attract the attention of everyone around.” (Follow both cues).`,
+                description: `When you follow a cue, you can take 1 stress to gain an additional cue: “You attract the attention of everyone around.” <em>(Follow both cues).</em>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -545,10 +557,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Eavesdropper",
-                description: `As a downtime move, you can lurk around where you shouldn't be and listen for secrets. Choose a target or an ally, then draw. Ignore the cue, and instead use the rank:\n
-                    \t 1-2 — You overhear something no one else knows - a future plan, a haunting deed, or their shame.\n
-                    \t 3-4 — You overhear a common rumor - a worst held secret, a trick they've pulled, or a romantic tryst.\n
-                    \t 5-6 — You are discovered, and learn nothing. You make a personal enemy of them.`,
+                description: `As a downtime move, you can lurk around where you shouldn't be and listen for secrets. Choose a target or an ally, then draw. Ignore the cue, and instead use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — You overhear something no one else knows - a future plan, a haunting deed, or their shame.</li>
+                    <li>3-4 — You overhear a common rumor - a worst held secret, a trick they've pulled, or a romantic tryst.</li>
+                    <li>5-6 — You are discovered, and learn nothing. You make a personal enemy of them.</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -632,10 +646,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Understudy",
-                description: `As a downtime action, you can take some henches on a minor crime spree. Explain your petty crimes, then draw. Ignore the cue, and instead use the rank:\n
-                    \t 1-2 — You stir up some recognition and pride. Clear 1 heat, and mark 1 tick on one of your tinker clocks.\n
-                    \t 3-4 — The night is a blur. Describe something you've lost, and something you've gained.\n
-                    \t 5-6 — You cause a complete ruckus. Mark 2 heat.`,
+                description: `As a downtime action, you can take some henches on a minor crime spree. Explain your petty crimes, then draw. Ignore the cue, and instead use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — You stir up some recognition and pride. Clear 1 heat, and mark 1 tick on one of your tinker clocks.</li>
+                    <li>3-4 — The night is a blur. Describe something you've lost, and something you've gained.</li>
+                    <li>5-6 — You cause a complete ruckus. Mark 2 heat.</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -691,7 +707,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Icebreaker",
-                description: `When you crack a joke while talking to an adversary, you may take 1 stress. If you do, they will not retaliate with violence. (They might retaliate in other ways).`,
+                description: `When you crack a joke while talking to an adversary, you may take 1 stress. If you do, they will not retaliate with violence. <em>(They might retaliate in other ways).</em>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -705,7 +721,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Fail Upward",
-                description: `When you play a 6 and follow the cue, gain an additional cue: "Despite this, you succeed." (Follow both cues).`,
+                description: `When you play a 6 and follow the cue, gain an additional cue: "Despite this, you succeed." <em>(Follow both cues).</em>`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -719,10 +735,12 @@ const playbooks = {
             {
                 marked: false,
                 name: "Understudy",
-                description: `As a downtime move, you can invite a fellow hench to join you in your hobby. Name the hobby, and how they're involved, then draw. Ignore the cue, and instead use the rank:\n
-                    \t 1-2 — You have a wonderful time and brighten each others' spirits. Gain +1 card to your next obligation draw.\n
-                    \t 3-4 — They don't have a good time. Explain what goes wrong, and take 1 stress.\n
-                    \t 5-6 — You completely lose track of time. Lose a remaining downtime move, or take 1 harm "sleep deprived."`,
+                description: `As a downtime move, you can invite a fellow hench to join you in your hobby. Name the hobby, and how they're involved, then draw. Ignore the cue, and instead use the rank:
+                <ul class="hench-list-1-col">
+                    <li>1-2 — You have a wonderful time and brighten each others' spirits. Gain +1 card to your next obligation draw.</li>
+                    <li>3-4 — They don't have a good time. Explain what goes wrong, and take 1 stress.</li>
+                    <li>5-6 — You completely lose track of time. Lose a remaining downtime move, or take 1 harm "sleep deprived."</li>
+                </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
             },

@@ -237,7 +237,7 @@
                                         <label for="hench-move-checkbox-{{@index}}"><em><strong>{{this.name}}</strong></em></label>
                                     </div>
                                     <div>
-                                        {{this.description}}
+                                        {{{this.description}}}
                                     </div>
                                     {{#if this.hasWriteIn}}
                                         <div>
@@ -253,10 +253,10 @@
                             </div>
                             <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
                                 <div>
-                                    <input type="text" name="hench-move-name-custom" class="hench-text-field" data-field-path="system.customMove.name" value="{{actor.system.customMove.name}}" {{#if actor.system.customMove.marked}} {{else}} disabled {{/if}} />
+                                    <input type="text" name="hench-move-name-custom" class="hench-text-input hench-emphasized hench-strong" data-field-path="system.customMove.name" value="{{actor.system.customMove.name}}" />
                                 </div>
                                 <div>
-                                    <textarea name="hench-move-description-custom" class="hench-text-field" data-field-path="system.customMove.description">{{actor.system.customMove.description}}</textarea>
+                                    <textarea name="hench-move-description-custom" class="hench-text-input" data-field-path="system.customMove.description">{{actor.system.customMove.description}}</textarea>
                                 </div>
                             </div>
                         </div>

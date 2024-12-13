@@ -12,7 +12,7 @@ export class HenchActorSheet extends ActorSheet {
     getData() {
         const context =  super.getData();
 
-        context.playbookKeys = [...playbookKeys, 'test'].map((k) => ({ key: k, selected: k === this.actor.system.playbook}));
+        context.playbookKeys = playbookKeys.map((k) => ({ key: k, selected: k === this.actor.system.playbook}));
 
         // TODO define system constants for these
         context.maxStress = 12;

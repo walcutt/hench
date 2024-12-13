@@ -26,9 +26,26 @@
     color: #FFFFFF;
 }
 
-/* Font */
+/* Text */
 .hench-sheet-container {
     font-family: 'Oswald';
+}
+
+.hench-emphasized {
+    font-style: italic;
+}
+
+.hench-strong {
+    font-weight: bold;
+}
+
+.hench-centered {
+    text-align: center;
+}
+
+.hench-title {
+    font-weight: 500;
+    font-size: 1.5em;
 }
 
 /* Flexbox */
@@ -62,6 +79,7 @@
 
 .hench-box.hench-box-stretch > * {
     align-items: stretch;
+    flex-basis: auto;
 }
 
 .hench-flex-fixed {
@@ -89,16 +107,6 @@
 
 .hench-padding-wide {
     padding: 1em;
-}
-
-/* Labels */
-.hench-centered {
-    text-align: center;
-}
-
-.hench-title {
-    font-weight: 500;
-    font-size: 1.5em;
 }
 
 /* Inputs */
@@ -159,4 +167,10 @@
 .hench-harm-row {
     border-bottom: 1px solid #000;
     align-items: stretch;
+}
+
+.hench-list-2-col {
+    columns: 2;
+    -moz-columns: 2;
+    -webkit-columns: 2;
 }
