@@ -1,0 +1,169 @@
+<form>
+    <div class="hench-sheet-container hench-padding-wide hench-gap-wide hench-white">
+        <!-- ID row -->
+        <div class="hench-row hench-gap-wide">
+            <!-- core-->
+            <div class="hench-box hench-flex-resizeable hench-l-grey hench-padding-wide hench-gap-narrow">
+                <!-- Name -->
+                <div class="hench-field hench-row hench-gap-narrow">
+                    <label class="hench-flex-fixed" for="hench-name">Name: </label>
+                    <input type="text" name="hench-name" class="hench-text-input hench-flex-resizeable" value="{{actor.name}}" data-field-path="name" />
+                </div>
+                <!-- Look -->
+                <div class="hench-field hench-row hench-gap-narrow">
+                    <label class="hench-flex-fixed" for="hench-look">Look: </label>
+                    <input type="text" name="hench-look" class="hench-text-input hench-flex-resizeable" value="{{actor.system.look}}" data-field-path="system.look" />
+                </div>
+                <!-- Storyline -->
+                <div class="hench-field hench-row hench-gap-narrow">
+                    <label class="hench-flex-fixed" for="hench-storyline">Storyline: </label>
+                    <select name="hench-storyline" class="hench-hench-sheet-dropdown hench-flex-resizeable" data-field-path="system.storyline">
+                        {{#each storylineKeys}}
+                            <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.key}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="hench-box hench-d-grey hench-flex-resizeable hench-centered hench-huge">
+                THE BOSS
+            </div>
+            <!-- icon -->
+            <div class="hench-box hench-l-grey hench-flex-fixed">
+                <img src="{{actor.img}}" data-edit="img" class="hench-icon" />
+            </div>
+        </div>
+        <!-- Big Box -->
+        <div class="hench-row hench-gap-wide">
+            <!-- Column -->
+            <div class="hench-box hench-box-stretch hench-flex-fixed hench-gap-wide">
+                <!-- Details -->
+                <div class="hench-row hench-flex-resizeable">
+                    <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                        <div class="hench-row hench-flex-resizeable">
+                            <div class="hench-centered hench-title hench-flex-resizeable">
+                                Details
+                            </div>
+                        </div>
+                        {{#each actor.system.details}}
+                            <div class="hench-row">
+                                <label for="hench-detail-{{@index}}">{{this.question}}</label>
+                            </div>
+                            <div class="hench-row">
+                                <input name="hench-detail-{{@index}}" type="text" class="hench-text-input" data-field-path="system.details[{{@index}}].answer" value="{{this.answer}}" />
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <!-- Heat -->
+                <div class="hench-row hench-flex-resizeable">
+                    <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                        <div class="hench-row hench-flex-resizeable">
+                            <div class="hench-centered hench-title hench-flex-resizeable">
+                                Heat
+                            </div>
+                        </div>
+                        <div class="hench-row hench-centered hench-flex-resizeable">
+                            <div class="hench-flex-resizeable hench-centered">
+                                <strong>Tier I</strong>
+                            </div>
+                        </div>
+                        <div class="hench-row hench-centered hench-flex-resizeable">
+                            <div class="hench-flex-resizeable hench-centered">
+                                <em>(Nuisance, low-stakes, local cops)</em>
+                            </div>
+                        </div>
+                        <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
+                            {{#partialint2checkbox maxHeat actor.system.heat 0 6}}
+                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                            {{/partialint2checkbox}}
+                        </div>
+                        <div class="hench-row hench-centered hench-flex-resizeable">
+                            <div class="hench-flex-resizeable hench-centered">
+                                <strong>Tier II</strong>
+                            </div>
+                        </div>
+                        <div class="hench-row hench-centered hench-flex-resizeable">
+                            <div class="hench-flex-resizeable hench-centered">
+                                <em>(Full-time, classic stakes, local super)</em>
+                            </div>
+                        </div>
+                        <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
+                            {{#partialint2checkbox maxHeat actor.system.heat 6 12}}
+                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                            {{/partialint2checkbox}}
+                        </div>
+                        <div class="hench-row hench-centered hench-flex-resizeable">
+                            <div class="hench-flex-resizeable hench-centered">
+                                <strong>Tier III</strong>
+                            </div>
+                        </div>
+                        <div class="hench-row hench-centered hench-flex-resizeable">
+                            <div class="hench-flex-resizeable hench-centered">
+                                <em>(Top-class, high-stakes, world's finest heroes)</em>
+                            </div>
+                        </div>
+                        <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
+                            {{#partialint2checkbox maxHeat actor.system.heat 12 18}}
+                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                            {{/partialint2checkbox}}
+                        </div>
+                        <!-- maybe add guidelines down here? -->
+                    </div>
+                </div>
+                <!-- Experience -->
+                <div class="hench-row hench-flex-resizeable">
+                    <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                        <div class="hench-row hench-flex-resizeable">
+                            <div class="hench-centered hench-title hench-flex-resizeable">
+                                Experience
+                            </div>
+                        </div>
+                        <div class="hench-row hench-row-even hench-gap-narrow hench-flex-resizeable">
+                            {{#int2checkbox maxExp actor.system.experience}}
+                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.experience" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                            {{/int2checkbox}}
+                        </div>
+                        {{#each actor.system.experienceTriggers}}
+                            <div class="hench-row hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                                <div class="hench-box hench-flex-fixed">
+                                    <input type="checkbox" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.experienceTriggers[{{@index}}].marked" {{#if this.marked}} checked {{/if}} />
+                                </div>
+                                <div class="hench-box hench-flex-resizeable">
+                                    {{this.description}}
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <!-- Moves -->
+            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-narrow hench-gap-narrow">
+                <div class="hench-row">
+                    <div class="hench-centered hench-title hench-flex-resizeable">
+                        Abilities
+                    </div>
+                </div>
+                {{#each actor.system.moves}}
+                    <div class="hench-row hench-l-grey hench-flex-resizeable hench-gap-narrow">
+                        <div class="hench-box hench-flex-fixed">
+                            <input type="checkbox" name="hench-move-checkbox-{{@index}}" class="hench-checkbox-toggle-field" data-field-path="system.moves[{{@index}}].marked" {{#if this.marked}}checked{{/if}} />
+                        </div>
+                        <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-padding-narrow">
+                            <div>
+                                <label for="hench-move-checkbox-{{@index}}"><em><strong>{{this.name}}</strong></em></label>
+                            </div>
+                            <div>
+                                {{{this.description}}}
+                            </div>
+                            {{#if this.hasWriteIn}}
+                                <div>
+                                    <input type="text" name="hench-move-writein-{{$index}}" class="hench-text-field" data-field-path="system.moves[{{@index}}].writein" value="{{this.writein}}" />
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</form>

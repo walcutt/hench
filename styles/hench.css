@@ -48,6 +48,11 @@
     font-size: 1.5em;
 }
 
+.hench-huge {
+    font-size: 3em;
+    font-weight: 700;
+}
+
 /* Flexbox */
 .hench-row {
     display: flex;

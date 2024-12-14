@@ -1,5 +1,6 @@
 const { HTMLField, SchemaField, NumberField, StringField, BooleanField, FilePathField, ArrayField } = foundry.data.fields;
 
+import { getBossMutation, nullStorylineKey, storylineKeys } from './boss.mjs';
 import { nullPlaybookKey, playbookKeys, lookupPlaybook, getPlaybookMutation } from './playbooks.mjs';
 
 const textField = () => new StringField({ required: true, blank: true });
@@ -109,5 +110,43 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
             ...base,
             this.customGear,
         ];
+    }
+}
+
+export class BossDataModel extends foundry.abstract.TypeDataModel {
+    static defineSchema() {
+        return {
+            look: textField(),
+            details: cappedArrayField(promptField(), 4),
+            storyline: new StringField({ required: true, blank: false, initial: nullStorylineKey, options: storylineKeys}),
+
+            heat: new NumberField({ required: true, integer: true, min: 0, initial: 0, max: 18}),
+
+            experienceTriggers: cappedArrayField(markableField(), 4),
+            experience: new NumberField({ required: true, integer: true, min: 0, initial: 0, max: 5 }),
+
+            moves: cappedArrayField(moveField(), 13),
+        };
+    }
+
+    static migrateData(source) {
+        // no migrations yet
+
+        return super.migrateData(source);
+    }
+
+    /** @override */
+    async _preCreate(data, options, user) {
+        await super._preCreate(data, options, user);
+
+        const initMutation = getBossMutation();
+
+        return this.updateSource(initMutation);
+    }
+
+    get tier() {
+        const divisor = 18 / 3;
+
+        return Math.ceil(this.heat / divisor);
     }
 }

@@ -1,5 +1,6 @@
 import { playbookKeys, validatePlaybookKey, getPlaybookMutation } from "../playbooks.mjs";
 import { updateField } from "../helpers/mutation-helper.mjs";
+import { storylineKeys } from "../boss.mjs";
 
 export class HenchActorSheet extends ActorSheet {
     /** @override */
@@ -13,10 +14,12 @@ export class HenchActorSheet extends ActorSheet {
         const context =  super.getData();
 
         context.playbookKeys = playbookKeys.map((k) => ({ key: k, selected: k === this.actor.system.playbook}));
+        context.storylineKeys = storylineKeys.map((k) => ({ key: k, selected: k === this.actor.system.storyline}));
 
         // TODO define system constants for these
         context.maxStress = 12;
         context.maxExp = 5;
+        context.maxHeat = 18;
 
         context.minGear = 3;
         context.maxGear = 5;
@@ -50,6 +53,14 @@ export class HenchActorSheet extends ActorSheet {
             const valueData = parseInt(element.dataset.value);
 
             const value = checked ? valueData : valueData - 1;
+
+            updateField(this.actor, path, value);
+        });
+
+        // normal dropdowns
+        html.find('.hench-hench-sheet-dropdown').on('change', (event) => {
+            const value = event.target.value;
+            const path = event.currentTarget.dataset.fieldPath;
 
             updateField(this.actor, path, value);
         });
