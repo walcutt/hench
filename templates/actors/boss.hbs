@@ -3,7 +3,7 @@
         <!-- ID row -->
         <div class="hench-row hench-gap-wide">
             <!-- core-->
-            <div class="hench-box hench-flex-resizeable hench-l-grey hench-padding-wide hench-gap-narrow">
+            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-wide hench-gap-narrow">
                 <!-- Name -->
                 <div class="hench-field hench-row hench-gap-narrow">
                     <label class="hench-flex-fixed" for="hench-name">Name: </label>
@@ -56,63 +56,77 @@
                 </div>
                 <!-- Heat -->
                 <div class="hench-row hench-flex-resizeable">
-                    <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
-                        <div class="hench-row hench-flex-resizeable">
+                    <div class="hench-box hench-box-stretch hench-d-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                        <div class="hench-row hench-flex-fixed hench-padding-wide">
                             <div class="hench-centered hench-title hench-flex-resizeable">
                                 Heat
                             </div>
                         </div>
-                        <div class="hench-row hench-centered hench-flex-resizeable">
-                            <div class="hench-flex-resizeable hench-centered">
-                                <strong>Tier I</strong>
+                        <!-- tier 1 -->
+                        <div class="hench-row hench-flex-resizeable">
+                            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-narrow hench-gap-narrow">
+                                <div class="hench-row hench-centered hench-flex-resizeable">
+                                    <div class="hench-flex-resizeable hench-centered">
+                                        <strong>Tier I</strong>
+                                    </div>
+                                </div>
+                                <div class="hench-row hench-centered hench-flex-resizeable">
+                                    <div class="hench-flex-resizeable hench-centered">
+                                        <em>(Nuisance, low-stakes, local cops)</em>
+                                    </div>
+                                </div>
+                                <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
+                                    {{#partialint2checkbox maxHeat actor.system.heat 0 6}}
+                                        <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                                    {{/partialint2checkbox}}
+                                </div>
                             </div>
                         </div>
-                        <div class="hench-row hench-centered hench-flex-resizeable">
-                            <div class="hench-flex-resizeable hench-centered">
-                                <em>(Nuisance, low-stakes, local cops)</em>
+                        <!-- tier 2 -->
+                        <div class="hench-row hench-flex-resizeable">
+                            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-narrow hench-gap-narrow">
+                                <div class="hench-row hench-centered hench-flex-resizeable">
+                                    <div class="hench-flex-resizeable hench-centered">
+                                        <strong>Tier II</strong>
+                                    </div>
+                                </div>
+                                <div class="hench-row hench-centered hench-flex-resizeable">
+                                    <div class="hench-flex-resizeable hench-centered">
+                                        <em>(Full-time, classic stakes, local super)</em>
+                                    </div>
+                                </div>
+                                <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
+                                    {{#partialint2checkbox maxHeat actor.system.heat 6 12}}
+                                        <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                                    {{/partialint2checkbox}}
+                                </div>
                             </div>
                         </div>
-                        <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
-                            {{#partialint2checkbox maxHeat actor.system.heat 0 6}}
-                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
-                            {{/partialint2checkbox}}
-                        </div>
-                        <div class="hench-row hench-centered hench-flex-resizeable">
-                            <div class="hench-flex-resizeable hench-centered">
-                                <strong>Tier II</strong>
+                        <!-- tier 3 -->
+                        <div class="hench-row hench-flex-resizeable">
+                            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-narrow hench-gap-narrow">
+                                <div class="hench-row hench-centered hench-flex-resizeable">
+                                    <div class="hench-flex-resizeable hench-centered">
+                                        <strong>Tier III</strong>
+                                    </div>
+                                </div>
+                                <div class="hench-row hench-centered hench-flex-resizeable">
+                                    <div class="hench-flex-resizeable hench-centered">
+                                        <em>(Top-class, high-stakes, world's finest heroes)</em>
+                                    </div>
+                                </div>
+                                <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
+                                    {{#partialint2checkbox maxHeat actor.system.heat 12 18}}
+                                        <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
+                                    {{/partialint2checkbox}}
+                                </div>
                             </div>
                         </div>
-                        <div class="hench-row hench-centered hench-flex-resizeable">
-                            <div class="hench-flex-resizeable hench-centered">
-                                <em>(Full-time, classic stakes, local super)</em>
-                            </div>
-                        </div>
-                        <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
-                            {{#partialint2checkbox maxHeat actor.system.heat 6 12}}
-                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
-                            {{/partialint2checkbox}}
-                        </div>
-                        <div class="hench-row hench-centered hench-flex-resizeable">
-                            <div class="hench-flex-resizeable hench-centered">
-                                <strong>Tier III</strong>
-                            </div>
-                        </div>
-                        <div class="hench-row hench-centered hench-flex-resizeable">
-                            <div class="hench-flex-resizeable hench-centered">
-                                <em>(Top-class, high-stakes, world's finest heroes)</em>
-                            </div>
-                        </div>
-                        <div class="hench-row hench-flex-resizeable hench-row-even hench-gap-narrow">
-                            {{#partialint2checkbox maxHeat actor.system.heat 12 18}}
-                                <input type="checkbox" class="hench-checkbox-int-field" data-field-path="system.heat" data-value="{{index}}" {{#if marked}} checked {{/if}} />
-                            {{/partialint2checkbox}}
-                        </div>
-                        <!-- maybe add guidelines down here? -->
                     </div>
                 </div>
                 <!-- Experience -->
                 <div class="hench-row hench-flex-resizeable">
-                    <div class="hench-box hench-l-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                    <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
                         <div class="hench-row hench-flex-resizeable">
                             <div class="hench-centered hench-title hench-flex-resizeable">
                                 Experience
@@ -124,7 +138,7 @@
                             {{/int2checkbox}}
                         </div>
                         {{#each actor.system.experienceTriggers}}
-                            <div class="hench-row hench-m-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
+                            <div class="hench-row hench-l-grey hench-flex-resizeable hench-padding-narrow hench-gap-narrow">
                                 <div class="hench-box hench-flex-fixed">
                                     <input type="checkbox" class="hench-checkbox hench-checkbox-toggle-field" data-field-path="system.experienceTriggers[{{@index}}].marked" {{#if this.marked}} checked {{/if}} />
                                 </div>
