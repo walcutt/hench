@@ -1,3 +1,5 @@
+import { HenchCard, HenchCardDataModel } from "./module/cards/hench-card.mjs";
+import { HenchCards, HenchCardsDataModel } from "./module/cards/hench-cards.mjs";
 import { BossDataModel, HenchDataModel } from "./module/data-models.mjs";
 
 import { HenchActorSheet } from "./module/sheets/hench-actor-sheet.mjs";
@@ -39,6 +41,18 @@ Hooks.once("init", () => {
         hench: HenchDataModel,
         boss: BossDataModel,
     };
+
+    CONFIG.Card.dataModels = {
+        base: HenchCardDataModel,
+    };
+    CONFIG.Card.documentClass = HenchCard;
+
+    CONFIG.Cards.dataModels = {
+        base: HenchCardsDataModel,
+    };
+    CONFIG.Cards.documentClass = HenchCards;
+
+    console.log(CONFIG);
 
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet('hench', HenchActorSheet, {
