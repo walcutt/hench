@@ -132,4 +132,24 @@ export class HenchCards extends Cards {
 
         await this.realignSorting();
     }
+
+    async drawSpread(amount, from = CONST.CARD_DRAW_MODES.TOP) {
+        let cardsToGrab = [];
+
+        switch(dest) {
+            case CONST.CARD_DRAW_MODES.BOTTOM:
+            case CONST.CARD_DRAW_MODES.LAST:
+                cardsToGrab = this.deck.slice(this.deck.length - amount, this.deck.length);
+                break;
+            case CONST.CARD_DRAW_MODES.TOP:
+            case CONST.CARD_DRAW_MODES.FIRST:
+                cardsToGrab = this.deck.slice(0, amount);
+                break;
+            default: // Random
+                const randomized = this.deck.toSorted((a, b) => (Math.random() - 0.5));
+                cardsToGrab = randomized.slice(0, amount);
+        }
+
+        await this.sendCards(cardsToGrab, CARD_ZONES.SPREAD);
+    }
 }

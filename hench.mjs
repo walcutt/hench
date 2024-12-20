@@ -3,6 +3,7 @@ import { HenchCards, HenchCardsDataModel } from "./module/cards/hench-cards.mjs"
 import { BossDataModel, HenchDataModel } from "./module/data-models.mjs";
 
 import { HenchActorSheet } from "./module/sheets/hench-actor-sheet.mjs";
+import { HenchCardsSheet } from "./module/sheets/hench-cards-sheet.mjs";
 
 Handlebars.registerHelper('int2checkbox', (size, threshold, options) => {
     return Array(size).fill(0).map(
@@ -58,5 +59,11 @@ Hooks.once("init", () => {
     Actors.registerSheet('hench', HenchActorSheet, {
         makeDefault: true,
         label: 'Hench Sheet',
+    });
+
+    CardStacks.unregisterSheet('core', CardsConfig);
+    CardStacks.registerSheet('hench', HenchCardsSheet, {
+        makeDefault: true,
+        label: 'Hench Cards Sheet'
     });
 });
