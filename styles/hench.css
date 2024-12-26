@@ -139,6 +139,10 @@
     resize: vertical;
 }
 
+.hench-clickable {
+    cursor: pointer;
+}
+
 /* Specific */
 
 .hench-row-even {

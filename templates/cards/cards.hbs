@@ -7,11 +7,13 @@
         <div class="hench-row hench-flex-resizeable hench-gap-wide">
             <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
                 <div class="hench-row hench-row-align-stretch hench-gap-narrow">
-                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
-                        <img class="hench-image-resize-vertical" src="{{data.img}}" />
+                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item hench-clickable hench-cards-action-draw">
+                        {{#topCard document "DECK"}}
+                            <img class="hench-image-resize-vertical" src="{{#if hasTopCard}}{{deckImage}}{{/if}}" />
+                        {{/topCard}}
                     </div>
                     <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-row-even">
-                        <div class="hench-row hench-padding-narrow hench-white">
+                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-draw">
                             <span>
                                 Draw
                             </span>
@@ -21,34 +23,38 @@
                                 View deck
                             </span>
                         </div>
-                        <div class="hench-row hench-padding-narrow hench-white">
+                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-draw-bottom">
                             <span>
                                 Draw from Bottom
                             </span>
                         </div>
                     </div>
                     <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
-                        <img class="hench-image-resize-vertical" src="{{data.img}}" />
+                        {{#topCard document "HELD"}}
+                            <img class="hench-image-resize-vertical" src="{{#if hasTopCard}}{{topCardImage}}{{/if}}" />
+                        {{/topCard}}
                     </div>
                     <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-row-even">
-                        <div class="hench-row hench-padding-narrow hench-white">
+                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-reset">
                             <span>
-                                Draw
+                                Reset
                             </span>
                         </div>
                         <div class="hench-row hench-padding-narrow hench-white">
                             <span>
-                                View deck
+                                View discard
                             </span>
                         </div>
-                        <div class="hench-row hench-padding-narrow hench-white">
+                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-return-spread">
                             <span>
-                                Draw from Bottom
+                                Return Spread
                             </span>
                         </div>
                     </div>
                     <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
-                        <img class="hench-image-resize-vertical" src="{{data.img}}" />
+                        {{#topCard document "DISCARD"}}
+                            <img class="hench-image-resize-vertical" src="{{#if hasTopCard}}{{topCardImage}}{{/if}}" />
+                        {{/topCard}}
                     </div>
                 </div>
             </div>
@@ -58,8 +64,8 @@
             <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
                 <div class="hench-row hench-row-even hench-gap-narrow">
                     {{#each document.spread}}
-                        <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
-                            <img class="hench-image-resize-vertical" src="{{this.currentFace.img}}" />
+                        <div class="hench-box hench-flex-resizeable hench-card-fixed-item hench-clickable hench-cards-action-play" data-card-index="{{@index}}">
+                            <img class="hench-image-resize-vertical" src="{{this.currentFace.img}}" alt="{{this.system.cue}}" />
                         </div>
                     {{else}}
                         <div class="hench-box hench-flex-resizeable hench-card-fixed-item hench-card-empty"></div>

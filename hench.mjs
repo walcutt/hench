@@ -37,6 +37,17 @@ Handlebars.registerHelper('canIncrease', (value, cap) => {
 Handlebars.registerHelper('increment', (value) => (value + 1));
 Handlebars.registerHelper('decrement', (value) => (value - 1));
 
+Handlebars.registerHelper('topCard', (cards, zone, options) => {
+    const pile = cards.cardsInZone(zone);
+
+    const topCardImage = pile[0]?.currentFace?.img;
+    const defaultImage = cards.img;
+
+    const hasTopCard = pile.length > 0;
+
+    return options.fn({ hasTopCard: hasTopCard, topCardImage: topCardImage, deckImage: defaultImage });
+});
+
 Hooks.once("init", () => {
     CONFIG.Actor.dataModels = {
         hench: HenchDataModel,
