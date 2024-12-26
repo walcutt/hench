@@ -66,6 +66,10 @@
     justify-content: center;
 }
 
+.hench-sheet-container.hench-unbiased > * {
+    flex-basis: 0;
+}
+
 .hench-box {
     display: flex;
     flex-direction: column;
@@ -85,6 +89,10 @@
 .hench-box.hench-box-stretch > * {
     align-items: stretch;
     flex-basis: auto;
+}
+
+.hench-box > .hench-row-align-stretch {
+    align-items: stretch;
 }
 
 .hench-flex-fixed {
@@ -133,7 +141,7 @@
 
 /* Specific */
 
-.hench-row-even{
+.hench-row-even {
     justify-content: space-evenly;
 }
 
@@ -156,6 +164,18 @@
 .hench-icon {
     aspect-ratio: 1;
     width: 10em;
+}
+
+.hench-image-resize-vertical {
+    aspect-ratio: initial;
+}
+
+.hench-card-fixed-item {
+    max-width: 20%;
+}
+
+.hench-card-fixed-item.hench-card-empty {
+    aspect-ratio: 2 / 3;
 }
 
 .hench-harm-fixed-width {

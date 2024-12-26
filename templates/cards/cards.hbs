@@ -1,3 +1,98 @@
 <form>
+
     Cards sheet
+
+    <div class="hench-sheet-container hench-unbiased hench-padding-wide hench-gap-wide hench-white">
+        <!-- Decks -->
+        <div class="hench-row hench-flex-resizeable hench-gap-wide">
+            <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                <div class="hench-row hench-row-align-stretch hench-gap-narrow">
+                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
+                        <img class="hench-image-resize-vertical" src="{{data.img}}" />
+                    </div>
+                    <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-row-even">
+                        <div class="hench-row hench-padding-narrow hench-white">
+                            <span>
+                                Draw
+                            </span>
+                        </div>
+                        <div class="hench-row hench-padding-narrow hench-white">
+                            <span>
+                                View deck
+                            </span>
+                        </div>
+                        <div class="hench-row hench-padding-narrow hench-white">
+                            <span>
+                                Draw from Bottom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
+                        <img class="hench-image-resize-vertical" src="{{data.img}}" />
+                    </div>
+                    <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-row-even">
+                        <div class="hench-row hench-padding-narrow hench-white">
+                            <span>
+                                Draw
+                            </span>
+                        </div>
+                        <div class="hench-row hench-padding-narrow hench-white">
+                            <span>
+                                View deck
+                            </span>
+                        </div>
+                        <div class="hench-row hench-padding-narrow hench-white">
+                            <span>
+                                Draw from Bottom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
+                        <img class="hench-image-resize-vertical" src="{{data.img}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Spread -->
+        <div class="hench-row hench-flex-resizeable hench-gap-wide">
+            <div class="hench-box hench-m-grey hench-flex-resizeable hench-padding-wide hench-gap-narrow">
+                <div class="hench-row hench-row-even hench-gap-narrow">
+                    {{#each document.spread}}
+                        <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
+                            <img class="hench-image-resize-vertical" src="{{this.currentFace.img}}" />
+                        </div>
+                    {{else}}
+                        <div class="hench-box hench-flex-resizeable hench-card-fixed-item hench-card-empty"></div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
+
+<!--
+
+| deck | ui | held | ui | deck |
+|  c   | c  |  C   | c  |  c   |
+
+deck click -> draw card to spread  (max 5)
+ui:
+  - draw -> draw card to spread (max 5)
+  - view -> open view-deck dialogue (GM only)
+  - draw from bottom -> draw card to spread from bottom (max 5)
+held click -> play to discard
+ui:
+  - shuffle -> shuffle
+  - reset -> reset & shuffle
+  - view -> open view-discard dialogue (all players)
+discard click -> ???
+
+card:
+| play |
+| card |
+| cue |
+
+play -> play card
+card -> image
+cue -> cue
+-->

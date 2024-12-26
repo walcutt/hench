@@ -6,11 +6,22 @@ export class HenchCardsSheet extends CardsConfig {
 
     /** @override */
     getData() {
-        return super.getData();
+        const t = super.getData();
+        console.log(t);
+        return t;
     }
 
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
+    }
+
+    /** @override */
+    static get defaultOptions() {
+        let opts = super.defaultOptions;
+
+        opts.resizable = true;
+
+        return opts;
     }
 }

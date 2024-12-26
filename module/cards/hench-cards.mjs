@@ -136,7 +136,7 @@ export class HenchCards extends Cards {
     async drawSpread(amount, from = CONST.CARD_DRAW_MODES.TOP) {
         let cardsToGrab = [];
 
-        switch(dest) {
+        switch(from) {
             case CONST.CARD_DRAW_MODES.BOTTOM:
             case CONST.CARD_DRAW_MODES.LAST:
                 cardsToGrab = this.deck.slice(this.deck.length - amount, this.deck.length);
