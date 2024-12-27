@@ -11,6 +11,7 @@ export class HenchCardsSheet extends CardsConfig {
     /** @override */
     getData() {
         const t = super.getData();
+        t.canManage = game.users.current.isGM;
         return t;
     }
 

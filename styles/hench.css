@@ -39,6 +39,10 @@
     font-weight: bold;
 }
 
+.hench-strikethrough {
+    text-decoration-line: line-through;
+}
+
 .hench-centered {
     text-align: center;
 }
