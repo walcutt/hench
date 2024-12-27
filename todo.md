@@ -1,12 +1,18 @@
 - [x] Define Move Model
 - [x] Define Hench Model
-- [] Define Boss Model
+- [x] Define Boss Model
 - [x] Define Prompt Model (DEFUNCT)
 - [] Define Storyline Model
 - [] ? Define Table Model
-- [] Implement baseline hench sheet
-- [] Implement baseline boss sheet
-- [] Design Hench sheet
-- [] Design Boss sheet
-- [] Implement Hench sheet
-- [] Implement Boss sheet
+- [x] Implement baseline hench sheet
+- [x] Implement baseline boss sheet
+- [x] Design Hench sheet
+- [x] Design Boss sheet
+- [x] Implement Hench sheet
+- [x] Implement Boss sheet
+- [x] Add deck page
+- [x] Allow drawing, playing, discarding cards
+- [x] Allow deck editing
+- [] Send messages for played cards
+- [] ? Macro for stress
+- [] Set up default data
