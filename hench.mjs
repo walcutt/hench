@@ -64,6 +64,13 @@ Hooks.once("init", () => {
     };
     CONFIG.Cards.documentClass = HenchCards;
 
+    // ABSOLUTE FUCKING CLUDGE:
+    // For some reason, the Card embedded doc in Cards is filed under "cards" and not "Card",
+    // And/or the lookup to create embedded documents is fucked beyond belief.
+    CONFIG.cards = {
+        documentClass: HenchCard,
+    };
+
     console.log(CONFIG);
 
     Actors.unregisterSheet('core', ActorSheet);

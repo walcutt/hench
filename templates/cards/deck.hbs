@@ -1,0 +1,56 @@
+<form>
+    <div class="hench-sheet-container hench-padding-wide hench-gap-wide hench-white">
+        <div class="hench-row hench-gap-wide">
+            <div class="hench-box hench-flex-resizeable hench-l-grey hench-padding-wide hench-gap-narrow">
+                <div class="hench-row hench-gap-narrow">
+                    <label class="hench-flex-fixed">Name: </label>
+                    <input type="text" class="hench-text-input hench-flex-resizeable" value="{{document.name}}" data-field-path="name">
+                </div>
+            </div>
+            <div class="hench-box hench-flex-fixed hench-m-grey hench-padding-wide hench-gap-narrow hench-clickable hench-reset-deck">
+                Shuffle Cards
+            </div>
+            <div class="hench-box hench-flex-fixed hench-d-grey hench-padding-wide hench-gap-narrow hench-clickable hench-add-card">
+                + Card
+            </div>
+        </div>
+        <div class="hench-row hench-gap-wide">
+            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-narrow hench-gap-narrow">
+                <div class="hench-row">
+                    <div class="hench-centered hench-title hench-flex-resizeable">
+                        Deck
+                    </div>
+                </div>
+                {{#each document.deck}}
+                    <div class="hench-row hench-l-grey hench-padding-narrow hench-gap-narrow">
+                        <div class="hench-box hench-flex-fixed">
+                            <img src="{{this.currentFace.img}}" class="hench-card-img-input hench-flex-fixed hench-clickable" style="height:3em" data-card-id="{{this._id}}" data-field="img" />
+                        </div>
+                        <div class="hench-box hench-flex-resizeable">
+                            <div class="hench-row hench-gap-narrow">
+                                <label class="hench-flex-fixed">
+                                    Name: 
+                                </label>
+                                <input type="text" class="hench-card-name-input hench-flex-resizeable" data-card-id="{{this._id}}" data-field="name" value="{{this.name}}" />
+                            </div>
+                            <div class="hench-row hench-gap-narrow">
+                                <label class="hench-flex-fixed">Cue: </label>
+                                <input type="text" class="hench-card-text-input hench-flex-resizeable" data-card-id="{{this._id}}" data-field="system.cue" value="{{this.system.cue}}" />
+                            </div>
+                        </div>
+                        <div class="hench-box hench-flex-fixed">
+                            <div class="hench-row hench-flex-resizeable hench-gap-narrow">
+                                <div class="hench-card-hold-button hench-flex-fixed hench-clickable" data-card-id="{{this._id}}">
+                                    Hold
+                                </div>
+                                <div class="hench-card-delete-button hench-flex-fixed hench-clickable" data-card-id="{{this._id}}">
+                                    Delete
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</form>

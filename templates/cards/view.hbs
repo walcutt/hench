@@ -1,0 +1,32 @@
+<form>
+    <div class="hench-sheet-container hench-padding-wide hench-gap-wide hench-white">
+        <div class="hench-row hench-gap-wide">
+            <div class="hench-box hench-flex-resizeable hench-m-grey hench-padding-narrow hench-gap-narrow">
+                <div class="hench-row">
+                    <div class="hench-centered hench-title hench-flex-resizeable">
+                        Discard
+                    </div>
+                </div>
+                {{#each document.discard}}
+                    <div class="hench-row hench-l-grey hench-padding-narrow hench-gap-narrow">
+                        <div class="hench-box hench-flex-fixed">
+                            <img src="{{this.currentFace.img}}" class="hench-flex-fixed" style="height:3em" data-card-id="{{this._id}}" data-field="img" />
+                        </div>
+                        <div class="hench-box hench-flex-resizeable">
+                            <div class="hench-row hench-gap-narrow">
+                                <label class="hench-flex-fixed">
+                                    Name: 
+                                </label>
+                                {{this.name}}
+                            </div>
+                            <div class="hench-row hench-gap-narrow">
+                                <label class="hench-flex-fixed">Cue: </label>
+                                {{this.system.cue}}
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</form>

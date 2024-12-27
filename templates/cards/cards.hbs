@@ -13,40 +13,40 @@
                         {{/topCard}}
                     </div>
                     <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-row-even">
-                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-draw">
-                            <span>
+                        <div class="hench-row hench-padding-narrow hench-white hench-centered hench-clickable hench-cards-action-draw">
+                            <span class="hench-flex-resizeable">
                                 Draw
                             </span>
                         </div>
-                        <div class="hench-row hench-padding-narrow hench-white">
-                            <span>
-                                View deck
+                        <div class="hench-row hench-padding-narrow hench-white hench-centered hench-clickable hench-cards-action-edit-deck">
+                            <span class="hench-flex-resizeable">
+                                Edit deck
                             </span>
                         </div>
-                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-draw-bottom">
-                            <span>
+                        <div class="hench-row hench-padding-narrow hench-white hench-centered hench-clickable hench-cards-action-draw-bottom">
+                            <span class="hench-flex-resizeable">
                                 Draw from Bottom
                             </span>
                         </div>
                     </div>
-                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item">
-                        {{#topCard document "HELD"}}
-                            <img class="hench-image-resize-vertical" src="{{#if hasTopCard}}{{topCardImage}}{{/if}}" />
-                        {{/topCard}}
+                    {{#topCard document "HELD"}}
+                    <div class="hench-box hench-flex-resizeable hench-card-fixed-item {{#if hasTopCard}}hench-card-action-play-held hench-clickable{{/if}}">
+                        <img class="hench-image-resize-vertical" src="{{#if hasTopCard}}{{topCardImage}}{{/if}}" />
                     </div>
+                    {{/topCard}}
                     <div class="hench-box hench-flex-resizeable hench-gap-narrow hench-row-even">
-                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-reset">
-                            <span>
+                        <div class="hench-row hench-padding-narrow hench-white hench-centered hench-clickable hench-cards-action-reset">
+                            <span class="hench-flex-resizeable">
                                 Reset
                             </span>
                         </div>
-                        <div class="hench-row hench-padding-narrow hench-white">
-                            <span>
+                        <div class="hench-row hench-padding-narrow hench-centered hench-white hench-clickable hench-cards-action-view-discard">
+                            <span class="hench-flex-resizeable">
                                 View discard
                             </span>
                         </div>
-                        <div class="hench-row hench-padding-narrow hench-white hench-clickable hench-cards-action-return-spread">
-                            <span>
+                        <div class="hench-row hench-padding-narrow hench-white hench-centered hench-clickable hench-cards-action-return-spread">
+                            <span class="hench-flex-resizeable">
                                 Return Spread
                             </span>
                         </div>
