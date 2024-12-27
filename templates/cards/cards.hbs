@@ -65,7 +65,7 @@
                 <div class="hench-row hench-row-even hench-gap-narrow">
                     {{#each document.spread}}
                         <div class="hench-box hench-flex-resizeable hench-card-fixed-item hench-clickable hench-cards-action-play" data-card-index="{{@index}}">
-                            <img class="hench-image-resize-vertical" src="{{this.currentFace.img}}" alt="{{this.system.cue}}" />
+                            <img class="hench-image-resize-vertical" src="{{this.currentFace.img}}" title="{{this.system.cue}}" />
                         </div>
                     {{else}}
                         <div class="hench-box hench-flex-resizeable hench-card-fixed-item hench-card-empty"></div>
