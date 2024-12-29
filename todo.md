@@ -13,6 +13,6 @@
 - [x] Add deck page
 - [x] Allow drawing, playing, discarding cards
 - [x] Allow deck editing
-- [] Send messages for played cards
+- [X] Send messages for played cards
 - [] ? Macro for stress
-- [] Set up default data
+- [x] Set up default data

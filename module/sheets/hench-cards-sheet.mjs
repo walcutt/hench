@@ -30,12 +30,16 @@ export class HenchCardsSheet extends CardsConfig {
             const index = element.dataset.cardIndex;
 
             // play the card!
+            const card = this.document.spread[index];
+            this.playCard(card);
             await this.document.sendCards(this.document.spread.slice(index, index + 1), CARD_ZONES.DISCARD, CONST.CARD_DRAW_MODES.TOP);
             await this.document.sendCards(this.document.spread, CARD_ZONES.DECK, CONST.CARD_DRAW_MODES.BOTTOM);
         });
 
         html.find('.hench-card-action-play-held').on('click', async (event) => {
             // play the card!
+            const card = this.document.held[0];
+            this.playCard(card)
             await this.document.sendCards(this.document.held.slice(0, 1), CARD_ZONES.DISCARD, CONST.CARD_DRAW_MODES.TOP);
         });
 
@@ -71,5 +75,32 @@ export class HenchCardsSheet extends CardsConfig {
         opts.resizable = true;
 
         return opts;
+    }
+
+    async playCard(card) {
+        const user = game.users.current;
+
+        const content = `
+            <div>
+                <hr />
+                <img src="${card.currentFace.img}" />
+                <hr />
+                <div>
+                    <strong>
+                        ${card.system.cue}
+                    </strong>
+                </div>
+            </div>
+        `;
+        const flavor = `
+            <em>plays the ${card.name}:</em>
+        `;
+
+
+        const chatMessage = await ChatMessage.create({
+            content: content,
+            flavor: flavor,
+            type: CONST.CHAT_MESSAGE_STYLES.OOC,
+        });
     }
 }
