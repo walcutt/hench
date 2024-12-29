@@ -17,7 +17,9 @@
     "esmodules": [
         "hench.mjs"
     ],
-    "styles": ["styles/hench.css"],
+    "styles": [
+        "styles/hench.css"
+    ],
     "packs": [],
     "languages": [],
     "documentTypes": {
@@ -29,5 +31,7 @@
             "move": {}
         }
     },
-    "url": "https://github.com/walcutt/hench"
+    "url": "https://github.com/walcutt/hench",
+    "manifest": "https://raw.githubusercontent.com/walcutt/hench/refs/heads/develop/system.json",
+    "download": "https://github.com/walcutt/hench/archive/refs/tags/0.0.2.zip"
 }
