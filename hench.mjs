@@ -64,6 +64,19 @@ Hooks.once("init", () => {
     };
     CONFIG.Cards.documentClass = HenchCards;
 
+    CONFIG.Cards.presets = {
+        henchDark: {
+            label: 'CARDS.HenchPresetDark',
+            src: 'systems/hench/presets/dark.json',
+            type: 'deck',
+        },
+        henchLight: {
+            label: 'CARDS.HenchPresetLight',
+            src: 'systems/hench/presets/light.json',
+            type: 'deck',
+        }
+    };
+
     // ABSOLUTE FUCKING CLUDGE:
     // For some reason, the Card embedded doc in Cards is filed under "cards" and not "Card",
     // And/or the lookup to create embedded documents is fucked beyond belief.

@@ -1,0 +1,1038 @@
+{
+  "name": "Hench Deck",
+  "type": "deck",
+  "description": "A standard 52-card deck of playing cards.",
+  "img": "cards/backs/dark-gold.webp",
+  "cards": [
+    {
+      "name": "Ace of Clubs",
+      "faces": [
+        {
+          "name": "Ace of Clubs",
+          "img": "cards/dark-gold/clubs-ace.webp",
+          "text": ""
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 1,
+      "suit": "clubs",
+      "_id": "KK1BiXxu1gg62jvZ",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 21,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "A perfect piece for your master plan.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Two of Clubs",
+      "faces": [
+        {
+          "name": "Two of Clubs",
+          "text": "",
+          "img": "cards/dark-gold/clubs-02.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 2,
+      "suit": "clubs",
+      "_id": "2vZG4yxqBZSvJrJ8",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 6,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You uncover hidden strings.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Three of Clubs",
+      "faces": [
+        {
+          "name": "Three of Clubs",
+          "text": "",
+          "img": "cards/dark-gold/clubs-03.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 3,
+      "suit": "clubs",
+      "_id": "UMePUQ4i4SE3zXB3",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 13,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You see a weakness, just out of reach.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Four of Clubs",
+      "faces": [
+        {
+          "name": "Four of Clubs",
+          "text": "",
+          "img": "cards/dark-gold/clubs-04.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 4,
+      "suit": "clubs",
+      "_id": "3FYA0DBTt9BZnhQy",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 3,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You miss some details.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Five of Clubs",
+      "faces": [
+        {
+          "name": "Five of Clubs",
+          "text": "",
+          "img": "cards/dark-gold/clubs-05.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 5,
+      "suit": "clubs",
+      "_id": "qKnfWUFojUIdC0gM",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 9,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You completely misunderstood things.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Six of Clubs",
+      "faces": [
+        {
+          "name": "Six of Clubs",
+          "text": "",
+          "img": "cards/dark-gold/clubs-06.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 6,
+      "suit": "clubs",
+      "_id": "zMgispFH4lPcloLn",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 19,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You’ve fallen for the trap.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Ace of Spades",
+      "faces": [
+        {
+          "name": "Ace of Spades",
+          "img": "cards/dark-gold/spades-ace.webp",
+          "text": ""
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 1,
+      "suit": "spades",
+      "_id": "j6p6HBs1pACTX3a4",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 12,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You are the beatdown.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Two of Spades",
+      "faces": [
+        {
+          "name": "Two of Spades",
+          "text": "",
+          "img": "cards/dark-gold/spades-02.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 2,
+      "suit": "spades",
+      "_id": "cQSfsBAv2BXcrPR7",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 2,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "They cower in fear.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Three of Spades",
+      "faces": [
+        {
+          "name": "Three of Spades",
+          "text": "",
+          "img": "cards/dark-gold/spades-03.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 3,
+      "suit": "spades",
+      "_id": "WZWbgAK6Y3uYL1Rt",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 5,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You win without a fight.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Four of Spades",
+      "faces": [
+        {
+          "name": "Four of Spades",
+          "text": "",
+          "img": "cards/dark-gold/spades-04.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 4,
+      "suit": "spades",
+      "_id": "MzRR6jtUa7tnfPyQ",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 0,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "It’s an all-out brawl.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Five of Spades",
+      "faces": [
+        {
+          "name": "Five of Spades",
+          "text": "",
+          "img": "cards/dark-gold/spades-05.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 5,
+      "suit": "spades",
+      "_id": "wucwyNbHc0twNQb7",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 22,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You run from the pain.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Six of Spades",
+      "faces": [
+        {
+          "name": "Six of Spades",
+          "text": "",
+          "img": "cards/dark-gold/spades-06.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 6,
+      "suit": "spades",
+      "_id": "d6J0o2PGJlqPmO7G",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 14,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "It breaks you.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Ace of Diamonds",
+      "faces": [
+        {
+          "name": "Ace of Diamonds",
+          "img": "cards/dark-gold/diamonds-ace.webp",
+          "text": ""
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 1,
+      "suit": "diamonds",
+      "_id": "jSk55TE6sIwjA17y",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 17,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "Treasure, beyond your wildest dreams.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Two of Diamonds",
+      "faces": [
+        {
+          "name": "Two of Diamonds",
+          "text": "",
+          "img": "cards/dark-gold/diamonds-02.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 2,
+      "suit": "diamonds",
+      "_id": "cYk6nIVTI6bih0mv",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 10,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You take what you need.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Three of Diamonds",
+      "faces": [
+        {
+          "name": "Three of Diamonds",
+          "text": "",
+          "img": "cards/dark-gold/diamonds-03.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 3,
+      "suit": "diamonds",
+      "_id": "cnTCFIlbta1f7Zjf",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 7,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You make it work with what you have.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Four of Diamonds",
+      "faces": [
+        {
+          "name": "Four of Diamonds",
+          "text": "",
+          "img": "cards/dark-gold/diamonds-04.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 4,
+      "suit": "diamonds",
+      "_id": "15HNYTYWhDz2mOV8",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 20,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "The target slips your grasp.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Five of Diamonds",
+      "faces": [
+        {
+          "name": "Five of Diamonds",
+          "text": "",
+          "img": "cards/dark-gold/diamonds-05.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 5,
+      "suit": "diamonds",
+      "_id": "eBztnLSwkDPHgUPW",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 18,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You left something critical behind.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Six of Diamonds",
+      "faces": [
+        {
+          "name": "Six of Diamonds",
+          "text": "",
+          "img": "cards/dark-gold/diamonds-06.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 6,
+      "suit": "diamonds",
+      "_id": "mFU22qq0VZJMKhNF",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 23,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You lose your prized possession.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Ace of Hearts",
+      "faces": [
+        {
+          "name": "Ace of Hearts",
+          "img": "cards/dark-gold/hearts-ace.webp",
+          "text": ""
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 1,
+      "suit": "hearts",
+      "_id": "BcXIqwaqGJLlhKhn",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 4,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "Everyone will love you for this.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Two of Hearts",
+      "faces": [
+        {
+          "name": "Two of Hearts",
+          "text": "",
+          "img": "cards/dark-gold/hearts-02.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 2,
+      "suit": "hearts",
+      "_id": "1LDM9ncYki3719si",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 11,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You earn their approval.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Three of Hearts",
+      "faces": [
+        {
+          "name": "Three of Hearts",
+          "text": "",
+          "img": "cards/dark-gold/hearts-03.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 3,
+      "suit": "hearts",
+      "_id": "yIJ4nJ6YAvbjYhej",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 8,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You take on the danger for your friends.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Four of Hearts",
+      "faces": [
+        {
+          "name": "Four of Hearts",
+          "text": "",
+          "img": "cards/dark-gold/hearts-04.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 4,
+      "suit": "hearts",
+      "_id": "hzL2haxbtVmRzD8J",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 15,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You hurt the bystanders.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Five of Hearts",
+      "faces": [
+        {
+          "name": "Five of Hearts",
+          "text": "",
+          "img": "cards/dark-gold/hearts-05.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 5,
+      "suit": "hearts",
+      "_id": "sL26xLD9QVbPwoc3",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 1,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You besmirch your reputation.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Six of Hearts",
+      "faces": [
+        {
+          "name": "Six of Hearts",
+          "text": "",
+          "img": "cards/dark-gold/hearts-06.webp"
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 6,
+      "suit": "hearts",
+      "_id": "dg6fWHvfQnwBZvY6",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 16,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You hurt someone close.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    }
+  ],
+  "width": 2,
+  "height": 3,
+  "rotation": 0,
+  "displayCount": true,
+  "flags": {
+    "exportSource": {
+      "world": "hench-test",
+      "system": "hench",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.0"
+    }
+  },
+  "system": {},
+  "folder": null,
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "hench",
+    "systemVersion": "0.0.0",
+    "createdTime": 1735270640335,
+    "modifiedTime": 1735271619021,
+    "lastModifiedBy": "qwaGMJc5w5shBqR1"
+  }
+}
