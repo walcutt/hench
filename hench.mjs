@@ -97,4 +97,8 @@ Hooks.once("init", () => {
         makeDefault: true,
         label: 'Hench Cards Sheet'
     });
+    
+    // remove other card stack types...
+    CardStacks.unregisterSheet('core', CardsHand);
+    CardStacks.unregisterSheet('core', CardsPile);
 });

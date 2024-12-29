@@ -11,6 +11,13 @@ export class HenchCardsDataModel extends foundry.abstract.TypeDataModel {
 
 // Document Class
 export class HenchCards extends Cards {
+    /** @override */
+    static get TYPES() {
+        return [
+            'deck',
+        ];
+    }
+
     // Getters
     get allCards() {
         return this.cards.contents;
