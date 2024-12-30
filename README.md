@@ -13,7 +13,7 @@ Draft 1
 
 ## How to Use
 ### Installation
-You can install the sytem using the latest manifest file, found [here]().
+You can install the sytem using the latest manifest file, found [here](https://raw.githubusercontent.com/walcutt/hench/refs/heads/develop/system.json).
 
 ### Gameplay
 - Make sure to add a deck in the cards section, using one of the presets.

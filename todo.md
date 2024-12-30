@@ -16,3 +16,4 @@
 - [X] Send messages for played cards
 - [] ? Macro for stress
 - [x] Set up default data
+- [x] Finalize release data
