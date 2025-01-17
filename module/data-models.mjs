@@ -101,10 +101,18 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
                 // Change first detail. Wipe response.
                 source.details[0] = playbook.details[0];
 
-                // Update forum lurker. retain 'marked'
-                const forumLurkerMarked = source.moves[4].marked;
-                source.moves[4] = playbook.moves[4];
-                source.moves[4].marked = forumLurkerMarked;
+                // Update forum lurker move description
+                source.moves[4].description = playbook.moves[4].description;
+                break;
+            case "BADASS":
+                // Change first detail. Wipe response
+                source.details[0] = playbook.details[0];
+
+                // Change 3rd mission planning question
+                source.missionPlanning[2] = playbook.missionPlanning[2];
+
+                // Update prep ability
+                source.moves[4].description = playbook.moves[4].description;
                 break;
             default:
                 break;

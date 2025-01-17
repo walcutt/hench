@@ -199,7 +199,7 @@ const playbooks = {
     BADASS: {
         details: [
             {
-                question: "Have you killed on the job? If so, what was your first?",
+                question: "What's the worst fight you ever got into?",
                 answer: "",
             },
             {
@@ -214,7 +214,7 @@ const playbooks = {
         missionPlanningQuestions: [
             "You've fought the target before. State where they left a scar, and how they did it.",
             "The target is an old friend. State how you met, and how it ended.",
-            "Ask the boss: can we kill the target?",
+            "Ask the boss: what are we not allowed to break?",
         ],
         expTrigger: {
             marked: false,
@@ -284,7 +284,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Like Old Times",
-                description: `As a downtime move, you can take an old friend out on the town. Describe how things were between you, back in the day and how you spend time with them now. Then, draw. Ignore the cue, and use the rank:
+                description: `As a prep action, you can take an old friend out on the town. Describe how things were between you, back in the day and how you spend time with them now. Then, draw. Ignore the cue, and use the rank:
                 <ul class="hench-list-1-col">
                     <li>1-2 — They want back on your good side. What is the same? What is different now?</li>
                     <li>3-4 — They might forgive you. What did you do to hurt them?</li>
