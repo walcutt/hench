@@ -61,7 +61,7 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
             moves: cappedArrayField(moveField(), 5),
             customMove: moveField(),
 
-            experienceTriggers: cappedArrayField(markableField(), 4),
+            experienceTriggers: cappedArrayField(markableField(), 5),
             experience: new NumberField({ required: true, integer: true, min: 0, initial: 0, max: 5 }),
 
             baseAdvancements: cappedArrayField(markableField(), 5),

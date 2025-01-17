@@ -796,6 +796,10 @@ export function getExpTriggers(playbookTrigger) {
         },
         {
             marked: false,
+            description: "You got on the boss's nerves.",
+        },
+        {
+            marked: false,
             description: "Your home life interfered with the mission.",
         },
     ];
