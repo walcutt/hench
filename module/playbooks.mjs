@@ -185,7 +185,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Forum Lurker",
-                description: `As a downtime move you can trawl the web for information about a piece of the setting. State a single fact about this thing and draw. Ignore the cue, and use the rank:
+                description: `As a prep action you can trawl the web for information about a piece of the setting. State a single fact about this thing and draw. Ignore the cue, and use the rank:
                 <ul class="hench-list-1-col">
                     <li>1-2 — You learn your information is correct but flawed.</li>
                     <li>3-6 — You learn your information is false but holds a kernel of truth.</li>

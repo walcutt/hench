@@ -76,22 +76,43 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
     static migrateData(source) {
         // Draft 0 -> Draft 1
         if(!source.version || source.version === versions.DRAFT_0) {
-            // Changes
-            // Update stress cap.
-            if(source.stress > 8) {
-                source.stress = 8;
-            }
-
-            // Add exp trigger.
-            source.experienceTriggers.splice(2, 0, {
-                marked: false,
-                description: "You got on the boss's nerves.",
-            });
-
-            source.version = versions.DRAFT_1;
+            source = this.migrateFromDraft0(source);
         }
 
         return super.migrateData(source);
+    }
+
+    static migrateFromDraft0(source) {
+        // Update stress cap.
+        if(source.stress > 8) {
+            source.stress = 8;
+        }
+
+        // Add exp trigger.
+        source.experienceTriggers.splice(2, 0, {
+            marked: false,
+            description: "You got on the boss's nerves.",
+        });
+
+        // Update playbooks details
+        const playbook = lookupPlaybook(source.playbook);
+        switch(source.playbook) {
+            case "SUPERFAN":
+                // Change first detail. Wipe response.
+                source.details[0] = playbook.details[0];
+
+                // Update forum lurker. retain 'marked'
+                const forumLurkerMarked = source.moves[4].marked;
+                source.moves[4] = playbook.moves[4];
+                source.moves[4].marked = forumLurkerMarked;
+                break;
+            default:
+                break;
+        }
+
+        source.version = versions.DRAFT_1;
+
+        return source;
     }
 
     /** @override */
