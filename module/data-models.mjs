@@ -109,7 +109,7 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
                 source.details[0] = playbook.details[0];
 
                 // Change 3rd mission planning question
-                source.missionPlanning[2] = playbook.missionPlanning[2];
+                source.missionPlanning[2] = playbook.missionPlanningQuestions[2];
 
                 // Update prep ability
                 source.moves[4].description = playbook.moves[4].description;
