@@ -17,7 +17,7 @@ export class HenchActorSheet extends ActorSheet {
         context.storylineKeys = storylineKeys.map((k) => ({ key: k, selected: k === this.actor.system.storyline}));
 
         // TODO define system constants for these
-        context.maxStress = 12;
+        context.maxStress = 8;
         context.maxExp = 5;
         context.maxHeat = 18;
 

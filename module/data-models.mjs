@@ -56,7 +56,7 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
                 levelThree: cappedArrayField(markableField(), 1, { marked: false, description: "" }),
                 levelFour: cappedArrayField(markableField(), 1, { marked: false, description: "" }),
             }),
-            stress: new NumberField({ required: true, integer: true, min: 0, initial: 0, max: 12 }),
+            stress: new NumberField({ required: true, integer: true, min: 0, initial: 3, max: 8 }),
 
             moves: cappedArrayField(moveField(), 5),
             customMove: moveField(),
