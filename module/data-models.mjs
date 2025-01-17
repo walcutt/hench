@@ -2,6 +2,7 @@ const { HTMLField, SchemaField, NumberField, StringField, BooleanField, FilePath
 
 import { getBossMutation, nullStorylineKey, storylineKeys } from './boss.mjs';
 import { nullPlaybookKey, playbookKeys, lookupPlaybook, getPlaybookMutation } from './playbooks.mjs';
+import { CURRENT_VERSION, versions } from './constants/versions.mjs';
 
 const textField = () => new StringField({ required: true, blank: true });
 
@@ -41,6 +42,7 @@ const nullPlaybook = lookupPlaybook(nullPlaybookKey);
 export class HenchDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
+            version: new StringField({ required: true, blank: true, initial: CURRENT_VERSION, options: versions }),
             look: textField(),
             details: cappedArrayField(promptField(), 2),
             fixedInclinations: cappedArrayField(textField(), 2),
@@ -72,7 +74,22 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
     }
 
     static migrateData(source) {
-        // No migrations yet - base case.
+        // Draft 0 -> Draft 1
+        if(!source.version || source.version === versions.DRAFT_0) {
+            // Changes
+            // Update stress cap.
+            if(source.stress > 8) {
+                source.stress = 8;
+            }
+
+            // Add exp trigger.
+            source.experienceTriggers.splice(2, 0, {
+                marked: false,
+                description: "You got on the boss's nerves.",
+            });
+
+            source.version = versions.DRAFT_1;
+        }
 
         return super.migrateData(source);
     }
@@ -116,6 +133,7 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
 export class BossDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
+            version: new StringField({ required: true, blank: true, initial: CURRENT_VERSION, options: versions }),
             look: textField(),
             details: cappedArrayField(promptField(), 4),
             storyline: new StringField({ required: true, blank: false, initial: nullStorylineKey, options: storylineKeys}),
@@ -130,7 +148,11 @@ export class BossDataModel extends foundry.abstract.TypeDataModel {
     }
 
     static migrateData(source) {
-        // no migrations yet
+        if(!source.version || source.version === versions.DRAFT_0) {
+            // Changes
+            
+            source.version = versions.DRAFT_1;
+        }
 
         return super.migrateData(source);
     }

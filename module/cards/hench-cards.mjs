@@ -1,3 +1,5 @@
+import { CURRENT_VERSION, versions } from '../constants/versions.mjs';
+
 import { CARD_ZONES } from "./hench-card.mjs";
 
 const { StringField } = foundry.data.fields;
@@ -5,7 +7,20 @@ const { StringField } = foundry.data.fields;
 // Data Model
 export class HenchCardsDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
-        return {};
+        return {
+            version: new StringField({ required: true, blank: true, initial: CURRENT_VERSION, options: versions }),
+        };
+    }
+
+    static migrateData(source) {
+        // Draft 0 -> Draft 1
+        if(!source.version || source.version === versions.DRAFT_0) {
+            // Changes
+
+            source.version = versions.DRAFT_1;
+        }
+
+        return super.migrateData(source);
     }
 }
 
