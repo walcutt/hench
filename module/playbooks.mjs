@@ -104,7 +104,7 @@ const playbooks = {
     SUPERFAN: {
         details: [
             {
-                question: "What's the coolest thing you've ever done?",
+                question: "What's the coolest part of being a hench?",
                 answer: "",
             },
             {
