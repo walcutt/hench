@@ -125,6 +125,14 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
 
                 // Update prep ability
                 source.moves[4].description = playbook.moves[4].description;
+                break;
+            case "DEMOTED":
+                // Change mission planning question
+                source.missionPlanning[0] = playbook.missionPlanningQuestions[0];
+
+                // Update prep ability
+                source.moves[4].description = playbook.moves[4].description;
+                break;
             default:
                 break;
         }

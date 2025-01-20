@@ -406,7 +406,7 @@ const playbooks = {
             "Attempting to reclaim your status",
         ],
         missionPlanningQuestions: [
-            "The target's clearly a rookie. State an obvious flaw with their approach or gimmick.",
+            "The target is sloppy. State an obvious flaw with their approach or gimmick.",
             "You've bested the target before. State how, and why you can't just do that again.",
             "Ask the boss: why hasn't the Guild taken out the target?",
         ],
@@ -468,7 +468,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Friends in Low Places",
-                description: `As a downtime move, you can ask an underworld contact to complete an unusual favor. State what you want, then draw. Ignore the cue, and instead use the rank:
+                description: `As a prep action, you can ask an underworld contact to complete an unusual favor. State what you want, then draw. Ignore the cue, and instead use the rank:
                 <ul class="hench-list-1-col">
                     <li>1-2 — They phone it in, but they do it.</li>
                     <li>3-4 — They do it sloppily. A new complication arises.</li>
