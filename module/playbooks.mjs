@@ -4,7 +4,7 @@ export const playbookKeys = [
     nullPlaybookKey,
     "SUPERFAN",
     "BADASS",
-    "LABMAN",
+    "INVENTOR",
     "DEMOTED",
     "OUTCAST",
     "USURPER",
@@ -295,7 +295,7 @@ const playbooks = {
             },
         ],
     },
-    LABMAN: {
+    INVENTOR: {
         details: [
             {
                 question: "What was your first invention?",
@@ -326,7 +326,7 @@ const playbooks = {
         gear: [
             {
                 marked: false,
-                description: "Futuristic Weapon",
+                description: "Remote Tracker",
             },
             {
                 marked: false,
@@ -379,7 +379,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Logistics",
-                description: `As a downtime action you may tap your connections to procure something unusual. State what you're trying to find, then draw. Ignore the cue, and instead  use the rank:
+                description: `As a prep action you may tap your connections to procure something unusual. State what you're trying to find, then draw. Ignore the cue, and instead  use the rank:
                 <ul class="hench-list-1-col">
                     <li>1-2 — You find a source in ample supply. However much you need, you got.</li>
                     <li>3-4 — You're able to squeeze out a sample. You have barely enough to work with.</li>

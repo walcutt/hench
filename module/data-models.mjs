@@ -114,6 +114,15 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
                 // Update prep ability
                 source.moves[4].description = playbook.moves[4].description;
                 break;
+            case "LABMAN":
+                // Rename playbook
+                source.playbook = "INVENTOR";
+
+                // Change first gear item
+                source.fixedGear[0].description = playbook.gear[0].description;
+
+                // Update prep ability
+                source.moves[4].description = playbook.moves[4].description;
             default:
                 break;
         }
