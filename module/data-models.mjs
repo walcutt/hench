@@ -133,6 +133,14 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
                 // Update prep ability
                 source.moves[4].description = playbook.moves[4].description;
                 break;
+            case "OUTCAST":
+                // Update prep ability
+                source.moves[4].description = playbook.moves[4].description;
+                break;
+            case "USURPER":
+                // Update prep ability
+                source.moves[4].description = playbook.moves[4].description;
+                break;
             default:
                 break;
         }

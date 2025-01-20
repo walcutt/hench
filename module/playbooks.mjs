@@ -557,7 +557,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Eavesdropper",
-                description: `As a downtime move, you can lurk around where you shouldn't be and listen for secrets. Choose a target or an ally, then draw. Ignore the cue, and instead use the rank:
+                description: `As a prep action, you can lurk around where you shouldn't be and listen for secrets. Choose a target or an ally, then draw. Ignore the cue, and instead use the rank:
                 <ul class="hench-list-1-col">
                     <li>1-2 — You overhear something no one else knows - a future plan, a haunting deed, or their shame.</li>
                     <li>3-4 — You overhear a common rumor - a worst held secret, a trick they've pulled, or a romantic tryst.</li>
@@ -646,7 +646,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "Understudy",
-                description: `As a downtime action, you can take some henches on a minor crime spree. Explain your petty crimes, then draw. Ignore the cue, and instead use the rank:
+                description: `As a prep action, you can take some henches on a minor crime spree. Explain your petty crimes, then draw. Ignore the cue, and instead use the rank:
                 <ul class="hench-list-1-col">
                     <li>1-2 — You stir up some recognition and pride. Clear 1 heat, and mark 1 tick on one of your tinker clocks.</li>
                     <li>3-4 — The night is a blur. Describe something you've lost, and something you've gained.</li>
