@@ -95,7 +95,7 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
         });
 
         // Update playbooks details
-        const playbook = lookupPlaybook(source.playbook);
+        var playbook = lookupPlaybook(source.playbook);
         switch(source.playbook) {
             case "SUPERFAN":
                 // Change first detail. Wipe response.
@@ -117,9 +117,11 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
             case "LABMAN":
                 // Rename playbook
                 source.playbook = "INVENTOR";
+                // Grab based on new name
+                playbook = lookupPlaybook(source.playbook);
 
                 // Change first gear item
-                source.fixedGear[0].description = playbook.gear[0].description;
+                source.fixedGear[5].description = playbook.gear[0].description;
 
                 // Update prep ability
                 source.moves[4].description = playbook.moves[4].description;
