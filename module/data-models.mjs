@@ -2,7 +2,6 @@ const { HTMLField, SchemaField, NumberField, StringField, BooleanField, FilePath
 
 import { getBossMutation, nullStorylineKey, storylineKeys } from './boss.mjs';
 import { nullPlaybookKey, playbookKeys, lookupPlaybook, getPlaybookMutation } from './playbooks.mjs';
-import { CURRENT_VERSION, versions } from './constants/versions.mjs';
 
 const textField = () => new StringField({ required: true, blank: true });
 
@@ -42,7 +41,6 @@ const nullPlaybook = lookupPlaybook(nullPlaybookKey);
 export class HenchDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
-            version: new StringField({ required: true, blank: true, initial: CURRENT_VERSION, options: versions }),
             look: textField(),
             details: cappedArrayField(promptField(), 2),
             fixedInclinations: cappedArrayField(textField(), 2),
@@ -74,88 +72,12 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
     }
 
     static migrateData(source) {
-        // Draft 0 -> Draft 1
-        if(!source.version || source.version === versions.DRAFT_0) {
-            source = this.migrateFromDraft0(source);
+        // New stress cap
+        if(source.stress) {
+            source.stress = Math.min(source.stress, 8);
         }
 
         return super.migrateData(source);
-    }
-
-    static migrateFromDraft0(source) {
-        // Update stress cap.
-        if(source.stress > 8) {
-            source.stress = 8;
-        }
-
-        // Add exp trigger.
-        source.experienceTriggers.splice(2, 0, {
-            marked: false,
-            description: "You got on the boss's nerves.",
-        });
-
-        // Update playbooks details
-        var playbook = lookupPlaybook(source.playbook);
-        switch(source.playbook) {
-            case "SUPERFAN":
-                // Change first detail. Wipe response.
-                source.details[0] = playbook.details[0];
-
-                // Update forum lurker move description
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            case "BADASS":
-                // Change first detail. Wipe response
-                source.details[0] = playbook.details[0];
-
-                // Change 3rd mission planning question
-                source.missionPlanning[2] = playbook.missionPlanningQuestions[2];
-
-                // Update prep ability
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            case "LABMAN":
-                // Rename playbook
-                source.playbook = "INVENTOR";
-                // Grab based on new name
-                playbook = lookupPlaybook(source.playbook);
-
-                // Change first gear item
-                source.fixedGear[5].description = playbook.gear[0].description;
-
-                // Update prep ability
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            case "DEMOTED":
-                // Change mission planning question
-                source.missionPlanning[0] = playbook.missionPlanningQuestions[0];
-
-                // Update prep ability
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            case "OUTCAST":
-                // Update prep ability
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            case "USURPER":
-                // Update prep ability
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            case "TIMECARD":
-                // Update gear
-                source.fixedGear[8].description = playbook.gear[3].description;
-
-                // Update prep ability
-                source.moves[4].name = playbook.moves[4].name;
-                source.moves[4].description = playbook.moves[4].description;
-                break;
-            default:
-                break;
-        }
-
-        source.version = versions.DRAFT_1;
-
-        return source;
     }
 
     /** @override */
@@ -197,7 +119,6 @@ export class HenchDataModel extends foundry.abstract.TypeDataModel {
 export class BossDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
-            version: new StringField({ required: true, blank: true, initial: CURRENT_VERSION, options: versions }),
             look: textField(),
             details: cappedArrayField(promptField(), 4),
             storyline: new StringField({ required: true, blank: false, initial: nullStorylineKey, options: storylineKeys}),
@@ -212,12 +133,6 @@ export class BossDataModel extends foundry.abstract.TypeDataModel {
     }
 
     static migrateData(source) {
-        if(!source.version || source.version === versions.DRAFT_0) {
-            // Changes
-            
-            source.version = versions.DRAFT_1;
-        }
-
         return super.migrateData(source);
     }
 
