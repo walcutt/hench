@@ -700,7 +700,7 @@ const playbooks = {
             },
             {
                 marked: false,
-                description: "A Harmless Weapon",
+                description: "Household Tool",
             },
         ],
         moves: [
@@ -734,11 +734,11 @@ const playbooks = {
             },
             {
                 marked: false,
-                name: "Understudy",
-                description: `As a downtime move, you can invite a fellow hench to join you in your hobby. Name the hobby, and how they're involved, then draw. Ignore the cue, and instead use the rank:
+                name: "Hobbyist",
+                description: `As a prep action, you can invite a fellow hench to join you in your hobby. Name the hobby, and how they're involved, then draw. Ignore the cue, and instead use the rank:
                 <ul class="hench-list-1-col">
-                    <li>1-2 — You have a wonderful time and brighten each others' spirits. Gain +1 card to your next obligation draw.</li>
-                    <li>3-4 — They don't have a good time. Explain what goes wrong, and take 1 stress.</li>
+                    <li>1-2 — You have a wonderful time and brighten each others' spirits. Gain +1 card to your next home life draw.</li>
+                    <li>3-4 — You have a pleasant, but ordinary, time. Clear 1 stress; they mark 1 experience.</li>
                     <li>5-6 — You completely lose track of time. Lose a remaining downtime move, or take 1 harm "sleep deprived."</li>
                 </ul>`,
                 hasWriteIn: false,
