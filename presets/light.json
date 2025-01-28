@@ -5,6 +5,48 @@
   "img": "cards/backs/light-soft.webp",
   "cards": [
     {
+      "name": "Joker",
+      "faces": [
+        {
+          "name": "Joker",
+          "img": "cards/light-soft/joker.webp",
+          "text": ""
+        }
+      ],
+      "width": 2,
+      "height": 3,
+      "rotation": 0,
+      "type": "base",
+      "value": 6,
+      "suit": "clubs",
+      "_id": "KK1BiXxu1gg62jvZ",
+      "description": "",
+      "face": 0,
+      "drawn": false,
+      "sort": 53,
+      "flags": {},
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "origin": "ye4k4c8ILOXk4prz",
+      "system": {
+        "cue": "You completely fail, in the most comical way possible.",
+        "zone": "DECK"
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "hench",
+        "systemVersion": "0.0.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
       "name": "Ace of Clubs",
       "faces": [
         {
@@ -536,7 +578,7 @@
       },
       "origin": "ye4k4c8ILOXk4prz",
       "system": {
-        "cue": "Treasure, beyond your wildest dreams.",
+        "cue": "You get exactly what you've been looking for.",
         "zone": "DECK"
       },
       "_stats": {
