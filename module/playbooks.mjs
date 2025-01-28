@@ -189,7 +189,7 @@ const playbooks = {
                 <ul class="hench-list-1-col">
                     <li>1-2 — You learn your information is correct but flawed.</li>
                     <li>3-6 — You learn your information is false but holds a kernel of truth.</li>
-                    <li>5-6 — Someone takes notice of your search and will interfere with your next obligation or mission.</li>
+                    <li>5-6 — Someone takes notice of your search and will interfere with your next home life or mission.</li>
                 </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
@@ -372,7 +372,7 @@ const playbooks = {
             {
                 marked: false,
                 name: "I'm a PROFESSIONAL.",
-                description: `When you take the tinker downtime action, mark 2 ticks instead of one.`,
+                description: `When you take the tinker prep action, mark 2 ticks instead of one.`,
                 hasWriteIn: false,
                 writeIn: null,
             },
@@ -739,7 +739,7 @@ const playbooks = {
                 <ul class="hench-list-1-col">
                     <li>1-2 — You have a wonderful time and brighten each others' spirits. Gain +1 card to your next home life draw.</li>
                     <li>3-4 — You have a pleasant, but ordinary, time. Clear 1 stress; they mark 1 experience.</li>
-                    <li>5-6 — You completely lose track of time. Lose a remaining downtime move, or take 1 harm "sleep deprived."</li>
+                    <li>5-6 — You completely lose track of time. Lose a remaining prep action, or take 1 harm "sleep deprived."</li>
                 </ul>`,
                 hasWriteIn: false,
                 writeIn: null,
