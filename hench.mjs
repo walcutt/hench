@@ -1,6 +1,7 @@
 import { HenchCard, HenchCardDataModel } from "./module/cards/hench-card.mjs";
 import { HenchCards, HenchCardsDataModel } from "./module/cards/hench-cards.mjs";
 import { BossDataModel, HenchDataModel } from "./module/data-models.mjs";
+import { CURRENT_VERSION, showUpdateWarningDialogue } from "./module/helpers/update-helper.mjs";
 
 import { HenchActorSheet } from "./module/sheets/hench-actor-sheet.mjs";
 import { HenchCardsSheet } from "./module/sheets/hench-cards-sheet.mjs";
@@ -101,4 +102,24 @@ Hooks.once("init", () => {
     // remove other card stack types...
     CardStacks.unregisterSheet('core', CardsHand);
     CardStacks.unregisterSheet('core', CardsPile);
+
+    // prepare version checker
+    game.settings.register('hench', 'version', {
+        name: 'Version',
+        scope: 'world',
+        config: true,
+        type: String,
+    });
+});
+
+Hooks.once("ready", () => {
+    // update version and alert if updated
+    const existingVersion = game.settings.get('hench', 'version');
+    
+    // TODO: don't alert on null/undefined after draft 1 cut.
+    if(existingVersion !== CURRENT_VERSION) {
+        showUpdateWarningDialogue(existingVersion);
+    }
+
+    game.settings.set('hench', 'version', CURRENT_VERSION);
 });
