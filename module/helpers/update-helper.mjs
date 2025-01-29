@@ -1,5 +1,7 @@
 export const versions = {
-    UNDEFINED: '',
+    EMPTY: '',
+    NULL: null,
+    UNDEFINED: undefined,
     DRAFT_0: '0',
     DRAFT_1: '1',
 };
@@ -8,6 +10,8 @@ export const CURRENT_VERSION = versions.DRAFT_1;
 
 const updateMap = {
     [versions.UNDEFINED]: versions.DRAFT_0,
+    [versions.EMPTY]: versions.DRAFT_0,
+    [versions.NULL]: versions.DRAFT_0,
     [versions.DRAFT_0]: versions.DRAFT_1,
 };
 

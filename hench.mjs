@@ -107,7 +107,7 @@ Hooks.once("init", () => {
     game.settings.register('hench', 'version', {
         name: 'Version',
         scope: 'world',
-        config: true,
+        config: false,
         type: String,
     });
 });
@@ -118,6 +118,7 @@ Hooks.once("ready", () => {
     
     // TODO: don't alert on null/undefined after draft 1 cut.
     if(existingVersion !== CURRENT_VERSION) {
+        console.log(`Showing warnings from ${existingVersion} -> ${CURRENT_VERSION}`);
         showUpdateWarningDialogue(existingVersion);
     }
 
