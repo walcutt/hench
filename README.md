@@ -6,10 +6,10 @@ Discord Link: TESTING NOT YET OPEN.
 
 ## Release Tracker
 ### Current Release Version:
-Draft 0
+Draft 1
 
 ### Next Target Release Version:
-Draft 1
+Draft 2
 
 ## How to Use
 ### Installation
