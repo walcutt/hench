@@ -2,7 +2,7 @@
     "id": "hench",
     "title": "HENCH",
     "description": "HENCH (2025)",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "compatibility": {
         "minimum": "12",
         "verified": "12"
@@ -31,7 +31,7 @@
             "move": {}
         }
     },
-    "url": "https://github.com/walcutt/hench",
-    "manifest": "https://raw.githubusercontent.com/walcutt/hench/refs/heads/develop/system.json",
-    "download": "https://github.com/walcutt/hench/archive/refs/tags/0.0.3.zip"
+    "url": "https://git.chloeherd.codes/walcutt/hench",
+    "manifest": "https://git.chloeherd.codes/walcutt/hench/raw/branch/develop/system.json",
+    "download": "https://git.chloeherd.codes/walcutt/hench/archive/0.1.0.zip"
 }
